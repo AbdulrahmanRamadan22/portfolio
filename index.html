@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelrahman Ramadan - Flutter Developer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Abdelrahman Ramadan - Flutter Developer specializing in Dart, Flutter, and cross-platform mobile development. View my portfolio, projects, and experience.">
+    <meta name="keywords" content="Abdelrahman Ramadan, Flutter Developer, Mobile Developer, Dart, Firebase, Clean Architecture, BLoC, Cubit, Cairo, Egypt">
+    <meta name="author" content="Abdelrahman Ramadan">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Abdelrahman Ramadan - Flutter Developer Portfolio">
+    <meta property="og:description" content="Flutter Developer specializing in Dart, cross-platform mobile development, and modern app architecture.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abdelrahmanramadan.me">
+    <meta property="og:image" content="https://abdelrahmanramadan.me/abdelrahman.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abdelrahman Ramadan - Flutter Developer Portfolio">
+    <meta name="twitter:description" content="Flutter Developer specializing in cross-platform mobile technologies.">
+    <meta name="twitter:image" content="https://abdelrahmanramadan.me/abdelrahman.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abdelrahmanramadan.me">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDJMMTMgOUwxMCAyMlYxNkg2VjEwSDRMTCAxMFoiIGZpbGw9IiMwMDdhY2MiLz4KPC9zdmc+">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+                <div class="terminal-title">Terminal - abdelrahman-ramadan-portfolio</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$ </span>
+                    <span class="command" id="loadingCommand"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <div class="terminal-output" id="terminalOutput"></div>
+                <div class="loading-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vscode-container" id="mainContainer" style="display: none;">
+        <!-- File Explorer Sidebar -->
+        <div class="sidebar">
+            <div class="explorer-header">
+                <div class="explorer-title">
+                    <img src="abdelrahman.png" alt="Abdelrahman Ramadan" class="folder-avatar">
+                    <span>ABDELRAHMAN RAMADAN</span>
+                </div>
+                <div class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-lightbulb" id="themeIcon"></i>
+                </div>
+            </div>
+            <div class="file-tree">
+                <div class="folder-item">
+                    <img src="abdelrahman.png" alt="Abdelrahman Ramadan" class="folder-avatar">
+                    <span>abdelrahman-ramadan-portfolio</span>
+                </div>
+                <div class="file-list">
+                    <div class="file-item active" data-tab="overview">
+                        <i class="fas fa-file-alt file-icon"></i>
+                        <span>overview.md</span>
+                    </div>
+                    <div class="file-item" data-tab="about">
+                        <i class="fas fa-user file-icon"></i>
+                        <span>about.md</span>
+                    </div>
+                    <div class="file-item" data-tab="experience">
+                        <i class="fas fa-briefcase file-icon"></i>
+                        <span>experience.md</span>
+                    </div>
+                    <div class="file-item" data-tab="skills">
+                        <i class="fas fa-code file-icon"></i>
+                        <span>skills.md</span>
+                    </div>
+                    <div class="file-item" data-tab="projects">
+                        <i class="fas fa-folder-open file-icon"></i>
+                        <span>projects.md</span>
+                    </div>
+                    <div class="file-item" data-tab="education">
+                        <i class="fas fa-graduation-cap file-icon"></i>
+                        <span>education.md</span>
+                    </div>
+                    <div class="file-item" data-tab="contact">
+                        <i class="fas fa-envelope file-icon"></i>
+                        <span>contact.md</span>
+                    </div>
+                    <a href="abdelrahman_ramadan.pdf" target="_blank" class="file-item" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-file-pdf file-icon" style="color: #e51400;"></i>
+                        <span>abdelrahman_ramadan.pdf</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- App/Tab Bar Container -->
+            <div class="app-bar">
+                <button class="top-menu-btn" id="topMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- Tab Bar -->
+                <div class="tab-bar" id="tabBar">
+                    <!-- Tabs will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="editor-content">
+                <!-- Overview Tab -->
+                <div class="tab-content" id="overview">
+                    <div class="content-header">
+                        <div class="overview-header">
+                            <div class="overview-title">
+                                <h1>Abdelrahman Ramadan</h1>
+                                <p class="overview-subtitle">Flutter Developer • 1+ Year Experience</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-body">
+                        <div class="overview-stats">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>1+</h3>
+                                    <p>Year Experience</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>7+</h3>
+                                    <p>Apps Developed</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3>2+</h3>
+                                    <p>Companies</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-content">
+                            <section class="overview-summary">
+                                <h3>Executive Summary</h3>
+                                <p>Flutter Developer with 1 year of experience building cross-platform mobile applications using Flutter and Dart. Skilled in state management, RESTful API integration, Firebase, and scalable app architecture. Focused on delivering clean, maintainable, and high-performance applications that provide seamless user experiences.</p>
+                            </section>
+
+                            <section class="overview-expertise">
+                                <h3>Core Expertise</h3>
+                                <div class="expertise-grid">
+                                    <div class="expertise-item">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <h4>Mobile Development</h4>
+                                        <p>Flutter, Dart, cross-platform apps</p>
+                                    </div>
+                                    <div class="expertise-item">
+                                        <i class="fas fa-sitemap"></i>
+                                        <h4>Architecture</h4>
+                                        <p>Clean Architecture, BLoC/Cubit, MVVM</p>
+                                    </div>
+                                    <div class="expertise-item">
+                                        <i class="fas fa-server"></i>
+                                        <h4>Backend & APIs</h4>
+                                        <p>RESTful APIs, Firebase, Dio, Retrofit</p>
+                                    </div>
+                                    <div class="expertise-item">
+                                        <i class="fas fa-code"></i>
+                                        <h4>Clean Code</h4>
+                                        <p>OOP, SOLID Principles, Responsive Design</p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="overview-recent">
+                                <h3>Recent Highlights</h3>
+                                <ul>
+                                    <li>Currently working as a Freelance Flutter Developer on Wratil ecosystem</li>
+                                    <li>Developed a complete Career Platform (Jobizz) using Clean Architecture and BLoC</li>
+                                    <li>Built robust applications like Home-Ease and Hospital Management App</li>
+                                    <li>Integrated Agora RTC and Pusher for real-time video/audio sessions</li>
+                                    <li>Optimized UI performance and adaptive layouts using flutter_screenutil</li>
+                                </ul>
+                            </section>
+
+                            <section class="overview-navigation">
+                                <h3>Explore My Portfolio</h3>
+                                <div class="navigation-grid">
+                                    <button class="nav-card" onclick="portfolioManager.openTab('about')">
+                                        <i class="fas fa-user"></i>
+                                        <div>
+                                            <h4>About Me</h4>
+                                            <p>Professional background and current role</p>
+                                        </div>
+                                    </button>
+                                    <button class="nav-card" onclick="portfolioManager.openTab('experience')">
+                                        <i class="fas fa-briefcase"></i>
+                                        <div>
+                                            <h4>Experience</h4>
+                                            <p>Detailed work history and achievements</p>
+                                        </div>
+                                    </button>
+                                    <button class="nav-card" onclick="portfolioManager.openTab('skills')">
+                                        <i class="fas fa-code"></i>
+                                        <div>
+                                            <h4>Skills</h4>
+                                            <p>Technical skills and technologies</p>
+                                        </div>
+                                    </button>
+                                    <button class="nav-card" onclick="portfolioManager.openTab('projects')">
+                                        <i class="fas fa-folder-open"></i>
+                                        <div>
+                                            <h4>Projects</h4>
+                                            <p>Key projects and applications</p>
+                                        </div>
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Welcome Page -->
+                <div class="tab-content" id="welcome">
+                    <div class="welcome-container">
+                        <div class="welcome-header">
+                            <div class="welcome-logo">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h1>Welcome to Abdelrahman Ramadan's Portfolio</h1>
+                            <p class="welcome-subtitle">Flutter Developer • 1+ Year Experience</p>
+                        </div>
+
+                        <div class="welcome-content">
+                            <div class="welcome-section">
+                                <h3>Getting Started</h3>
+                                <p>Explore my professional journey by selecting any file from the explorer on the left:</p>
+                                <div class="quick-actions">
+                                    <button class="welcome-btn" onclick="portfolioManager.openTab('about')">
+                                        <i class="fas fa-user"></i>
+                                        <span>About Me</span>
+                                    </button>
+                                    <button class="welcome-btn" onclick="portfolioManager.openTab('experience')">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Work Experience</span>
+                                    </button>
+                                    <button class="welcome-btn" onclick="portfolioManager.openTab('projects')">
+                                        <i class="fas fa-folder-open"></i>
+                                        <span>Key Projects</span>
+                                    </button>
+                                    <button class="welcome-btn" onclick="portfolioManager.openTab('contact')">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Contact Info</span>
+                                    </button>
+                                    <a href="abdelrahman_ramadan.pdf" download class="welcome-btn" style="text-decoration: none; color: inherit;">
+                                        <i class="fas fa-download"></i>
+                                        <span>Download CV</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="welcome-section">
+                                <h3>Keyboard Shortcuts</h3>
+                                <div class="shortcuts-grid">
+                                    <div class="shortcut-item">
+                                        <kbd>Ctrl/Cmd + 1</kbd>
+                                        <span>Open About</span>
+                                    </div>
+                                    <div class="shortcut-item">
+                                        <kbd>Ctrl/Cmd + 2</kbd>
+                                        <span>Open Experience</span>
+                                    </div>
+                                    <div class="shortcut-item">
+                                        <kbd>Ctrl/Cmd + 3</kbd>
+                                        <span>Open Skills</span>
+                                    </div>
+                                    <div class="shortcut-item">
+                                        <kbd>Ctrl/Cmd + 4</kbd>
+                                        <span>Open Projects</span>
+                                    </div>
+                                    <div class="shortcut-item">
+                                        <kbd>Ctrl/Cmd + 5</kbd>
+                                        <span>Open Education</span>
+                                    </div>
+                                    <div class="shortcut-item">
+                                        <kbd>Ctrl/Cmd + 6</kbd>
+                                        <span>Open Contact</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="welcome-section">
+                                <h3>Quick Facts</h3>
+                                <div class="facts-grid">
+                                    <div class="fact-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <div>
+                                            <strong>1+ Year</strong>
+                                            <span>Flutter Development</span>
+                                        </div>
+                                    </div>
+                                    <div class="fact-item">
+                                        <i class="fas fa-mobile"></i>
+                                        <div>
+                                            <strong>7+ Apps</strong>
+                                            <span>Developed & Delivered</span>
+                                        </div>
+                                    </div>
+                                    <div class="fact-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <div>
+                                            <strong>Cairo, Egypt</strong>
+                                            <span>Current Location</span>
+                                        </div>
+                                    </div>
+                                    <div class="fact-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <div>
+                                            <strong>Freelancer</strong>
+                                            <span>Current Status</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Tab -->
+                <div class="tab-content" id="about">
+                    <div class="content-header">
+                        <div class="profile-section">
+                            <div class="profile-image">
+                                <img src="abdelrahman.png" alt="Abdelrahman Ramadan" class="profile-photo">
+                            </div>
+                            <div class="profile-info">
+                                <h1>Abdelrahman Ramadan</h1>
+                                <h2>Flutter Developer</h2>
+                                <p class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Cairo, Egypt
+                                </p>
+                                <a href="abdelrahman_ramadan.pdf" download class="contact-btn primary" style="margin-top: 15px; display: inline-flex; text-decoration: none; width: fit-content;">
+                                    <i class="fas fa-download"></i>
+                                    Download CV
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-body">
+                        <section class="summary">
+                            <h3>Professional Summary</h3>
+                            <p>Flutter Developer with 1 year of experience building cross-platform mobile applications using Flutter and Dart. Skilled in state management, RESTful API integration, Firebase, and scalable app architecture. Focused on delivering clean, maintainable, and high-performance applications that provide seamless user experiences.</p>
+                        </section>
+
+                        <section class="highlights">
+                            <h3>Key Highlights</h3>
+                            <ul>
+                                <li>Solid experience building cross-platform mobile applications using Flutter and Dart</li>
+                                <li>Strong expertise in state management (BLoC/Cubit, MVVM) and Clean Architecture</li>
+                                <li>Proficient in integrating RESTful APIs (Dio, Retrofit) and Firebase services</li>
+                                <li>Experience in implementing local storage solutions like SQLite and Secure Storage</li>
+                                <li>Adherence to OOP, SOLID principles, and clean code practices</li>
+                                <li>Skilled in responsive and adaptive design for various screen sizes</li>
+                            </ul>
+                        </section>
+
+                        <section class="current-role">
+                            <h3>Current Position</h3>
+                            <div class="role-card">
+                                <h4>Flutter Developer - Freelance Project (Wratil)</h4>
+                                <p class="duration">March 2026 - Present</p>
+                                <ul>
+                                    <li>Developing a digital ecosystem connecting students with certified Quran teachers</li>
+                                    <li>Integrating Agora RTC and Pusher for real-time voice/video sessions and notifications</li>
+                                    <li>Building a commerce ecosystem with digital wallets and automated booking</li>
+                                    <li>Securing API communication using Retrofit/Dio interceptors and encrypted local storage</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Experience Tab -->
+                <div class="tab-content" id="experience">
+                    <div class="content-header">
+                        <h1>Work Experience</h1>
+                    </div>
+                    <div class="content-body">
+                        <div class="git-timeline">
+                            <div class="git-branch"></div>
+                            
+                            <div class="git-commit">
+                                <div class="commit-dot"></div>
+                                <div class="commit-content">
+                                    <div class="commit-header">
+                                        <span class="commit-date" style="font-weight: bold; color: var(--accent-blue); font-size: 14px;"><i class="far fa-calendar-alt"></i> Mar 2026 - Present</span>
+                                    </div>
+                                    <div class="commit-message">
+                                        <h3>Flutter Developer</h3>
+                                        <h4><a href="https://wratil.com" target="_blank">Freelance Project — Wratil <i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a> (Remote)</h4>
+                                    </div>
+                                    <div class="commit-details">
+                                        <p>A digital ecosystem connecting students with certified Quran teachers via real-time video sessions, smart booking, and an AI-powered advisory system.</p>
+                                        <ul>
+                                            <li>Integrated Agora RTC and Pusher for real-time voice/video sessions and live notifications.</li>
+                                            <li>Built a commerce ecosystem with digital wallets, subscription packages, and automated booking.</li>
+                                            <li>Secured API communication using Retrofit/Dio interceptors and encrypted local storage for token management.</li>
+                                        </ul>
+                                        <div class="tech-stack mt-2">
+                                            <span class="tech-tag">BLoC</span>
+                                            <span class="tech-tag">Clean Arch</span>
+                                            <span class="tech-tag">Retrofit/Dio</span>
+                                            <span class="tech-tag">Agora RTC</span>
+                                            <span class="tech-tag">Pusher</span>
+                                            <span class="tech-tag">Localization</span>
+                                            <span class="tech-tag">Google Gemini</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="git-commit">
+                                <div class="commit-dot"></div>
+                                <div class="commit-content">
+                                    <div class="commit-header">
+                                        <span class="commit-date" style="font-weight: bold; color: var(--accent-blue); font-size: 14px;"><i class="far fa-calendar-alt"></i> Sep 2024 - Oct 2024</span>
+                                    </div>
+                                    <div class="commit-message">
+                                        <h3>Mobile Developer (Flutter Intern)</h3>
+                                        <h4><a href="https://instanteg.com/" target="_blank">Instant Software Solutions <i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a> - Cairo, Egypt (Remote)</h4>
+                                    </div>
+                                    <div class="commit-details">
+                                        <ul>
+                                            <li>Developed responsive, user-friendly interfaces following modern UI/UX principles, improving user engagement by 25%.</li>
+                                            <li>Integrated REST APIs with Retrofit/Dio, ensuring seamless data flow and offline functionality using SQLite/SharedPreferences.</li>
+                                            <li>Debugged and resolved 15+ critical issues, reducing app crashes by 30% and enhancing stability.</li>
+                                            <li>Implemented Clean Architecture, reducing code redundancy by 40% and improving maintainability.</li>
+                                        </ul>
+                                        <div class="tech-stack mt-2">
+                                            <span class="tech-tag">Flutter</span>
+                                            <span class="tech-tag">Dart</span>
+                                            <span class="tech-tag">REST APIs</span>
+                                            <span class="tech-tag">Clean Architecture</span>
+                                            <span class="tech-tag">Local Storage</span>
+                                            <span class="tech-tag">Git</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Tab -->
+                <div class="tab-content" id="skills">
+                    <div class="content-header">
+                        <h1>Technical Skills</h1>
+                    </div>
+                    <div class="content-body">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>Languages & Frameworks</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Dart</span>
+                                    <span class="skill-tag">Flutter</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Architecture & State Management</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Clean Architecture</span>
+                                    <span class="skill-tag">MVVM</span>
+                                    <span class="skill-tag">BLoC/Cubit</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Backend & Integration</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">RESTful APIs</span>
+                                    <span class="skill-tag">Firebase</span>
+                                    <span class="skill-tag">Http</span>
+                                    <span class="skill-tag">Dio</span>
+                                    <span class="skill-tag">Retrofit</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Local Storage</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">SQLite</span>
+                                    <span class="skill-tag">SharedPreferences</span>
+                                    <span class="skill-tag">Secure Storage</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Software Principles</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">OOP</span>
+                                    <span class="skill-tag">SOLID Principles</span>
+                                    <span class="skill-tag">Clean Code</span>
+                                    <span class="skill-tag">Responsive & Adaptive Design</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>DevOps & CI/CD</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Fastlane</span>
+                                    <span class="skill-tag">Firebase App Distribution</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <h3>Tools</h3>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">GitHub</span>
+                                    <span class="skill-tag">Postman</span>
+                                    <span class="skill-tag">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Tab -->
+                <div class="tab-content" id="projects">
+                    <div class="content-header">
+                        <h1>Key Projects</h1>
+                    </div>
+                    <div class="content-body">
+                        <div class="premium-projects-grid">
+                            
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Jobizz — Career Platform</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/jobizz" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Graduation Project</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Mar 2025 - Jul 2025</span>
+                                </div>
+                                <p class="project-description">Production-grade career platform built with Flutter and Clean Architecture, designed to connect job seekers with opportunities through a secure, scalable, and responsive mobile experience.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Retrofit/Dio</span>
+                                    <span class="tech-tag">GetIt</span>
+                                    <span class="tech-tag">Freezed</span>
+                                </div>
+                            </div>
+                            
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Home-Ease</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/HomeEase_App" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Mobile App</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Nov 2024 - Feb 2025</span>
+                                </div>
+                                <p class="project-description">Mobile app providing home services (electrical, plumbing, carpentry) with subscription options and multiple payment methods.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Bloc</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Localization</span>
+                                </div>
+                            </div>
+
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Hospital Management App</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/hospital" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Mobile App</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Sep 2024 - Oct 2024</span>
+                                </div>
+                                <p class="project-description">Digital system for patient records and hospital operations via API integration with intuitive dashboards.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Dio</span>
+                                    <span class="tech-tag">SQLite</span>
+                                </div>
+                            </div>
+
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Chat-App</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/chat_app" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Mobile App</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Jul 2024 - Aug 2024</span>
+                                </div>
+                                <p class="project-description">Secure chat app with Firebase authentication, real-time message delivery, and scalable cloud storage.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Firestore</span>
+                                </div>
+                            </div>
+
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Todo-App</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/todo_app" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Mobile App</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> May 2024 - Jun 2024</span>
+                                </div>
+                                <p class="project-description">Minimalist productivity app for daily task organization featuring local database persistence.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">SqfLite</span>
+                                    <span class="tech-tag">Cubit</span>
+                                </div>
+                            </div>
+
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Movie-app</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/movie_app" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Mobile App</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Mar 2023 - Apr 2024</span>
+                                </div>
+                                <p class="project-description">A sleek Movie Discovery App with real-time API data, smooth animations, and a clean BLoC architecture.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">REST API</span>
+                                    <span class="tech-tag">Bloc</span>
+                                </div>
+                            </div>
+
+                            <div class="premium-project-card">
+                                <div class="project-header">
+                                    <h3>Ecommerce-app</h3>
+                                    <div class="project-links">
+                                        <a href="https://github.com/AbdulrahmanRamadan22/ecommerce" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                                <div class="project-meta">
+                                    <span class="badge type-badge">Mobile App</span>
+                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Sep 2023 - Feb 2024</span>
+                                </div>
+                                <p class="project-description">Mobile storefront with product listings, cart, delivery tracking, secure authentication, and Google Maps integration.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">GetX</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Google Maps</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Tab -->
+                <div class="tab-content" id="education">
+                    <div class="content-header">
+                        <h1>Education & Certifications</h1>
+                    </div>
+                    <div class="content-body">
+                        <div class="education-timeline">
+                            <div class="education-item">
+                                <div class="education-period">Sep 2021 - Jul 2025</div>
+                                <div class="education-details">
+                                    <h3>Master's Degree in Computer Science</h3>
+                                    <h4>Higher Technological Institute, Beni Suef</h4>
+                                    <p>Overall Grade: Excellent (85%)</p>
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <div class="education-period">Feb 2024 - Oct 2024</div>
+                                <div class="education-details">
+                                    <h3>Flutter Diploma</h3>
+                                    <h4>Instant Software Solutions</h4>
+                                    <ul>
+                                        <li>Technologies: Flutter, Dart, Firebase, State Management</li>
+                                        <li>Concepts: OOP, Data Caching, RESTful APIs</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <div class="education-period">Sep 2024 - Oct 2024</div>
+                                <div class="education-details">
+                                    <h3>Flutter Training</h3>
+                                    <h4>Instant Software Solutions</h4>
+                                    <ul>
+                                        <li>Developed a hospital management app with API integration for patient/data tracking.</li>
+                                        <li>Responsive and easy-to-use user interfaces were developed.</li>
+                                        <li>Integrated REST APIs with Dio and implemented Clean Architecture.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="languages-section">
+                            <h3>Languages</h3>
+                            <div class="language-skills">
+                                <div class="language-item">
+                                    <span class="language-name">Arabic</span>
+                                    <div class="language-level">
+                                        <div class="level-indicator native"></div>
+                                        <span>Native</span>
+                                    </div>
+                                </div>
+                                <div class="language-item">
+                                    <span class="language-name">English</span>
+                                    <div class="language-level">
+                                        <div class="level-indicator professional"></div>
+                                        <span>Good</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Tab -->
+                <div class="tab-content" id="contact">
+                    <div class="content-header">
+                        <h1>Contact Information</h1>
+                    </div>
+                    <div class="content-body">
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>Email</h3>
+                                    <p>abdelrahmanramadan1910@gmail.com</p>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-btn primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Send Email
+                                    </button>
+                                    <button class="contact-btn secondary">
+                                        <i class="fas fa-copy"></i>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>Phone</h3>
+                                    <p>+201099209084</p>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-btn primary">
+                                        <i class="fas fa-phone"></i>
+                                        Call
+                                    </button>
+                                    <button class="contact-btn secondary">
+                                        <i class="fas fa-copy"></i>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>LinkedIn</h3>
+                                    <p><a href="https://www.linkedin.com/in/abdelrahman-ramadan22/" target="_blank" style="color: var(--accent-blue); text-decoration: none;">abdelrahman-ramadan22</a></p>
+                                </div>
+                                <div class="contact-actions">
+                                    <a href="https://www.linkedin.com/in/abdelrahman-ramadan22/" target="_blank" class="contact-btn primary" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Visit Profile
+                                    </a>
+                                    <button class="contact-btn secondary" onclick="navigator.clipboard.writeText('https://www.linkedin.com/in/abdelrahman-ramadan22/')">
+                                        <i class="fas fa-copy"></i>
+                                        Copy Link
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>GitHub</h3>
+                                    <p><a href="https://github.com/AbdulrahmanRamadan22" target="_blank" style="color: var(--accent-blue); text-decoration: none;">AbdulrahmanRamadan22</a></p>
+                                </div>
+                                <div class="contact-actions">
+                                    <a href="https://github.com/AbdulrahmanRamadan22" target="_blank" class="contact-btn primary" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        View Repositories
+                                    </a>
+                                    <button class="contact-btn secondary" onclick="navigator.clipboard.writeText('https://github.com/AbdulrahmanRamadan22')">
+                                        <i class="fas fa-copy"></i>
+                                        Copy Link
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>Location</h3>
+                                    <p>Cairo, Egypt</p>
+                                </div>
+                                <div class="contact-actions">
+                                    <button class="contact-btn primary">
+                                        <i class="fas fa-map"></i>
+                                        View on Map
+                                    </button>
+                                    <button class="contact-btn secondary">
+                                        <i class="fas fa-copy"></i>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="availability-section">
+                            <h3>Availability</h3>
+                            <div class="availability-card">
+                                <div class="status-indicator available"></div>
+                                <div class="availability-info">
+                                    <h4>Open to Opportunities</h4>
+                                    <p>Currently available for Flutter developer positions. Interested in challenging projects involving Flutter, Dart, Clean Architecture, and building responsive mobile applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-dropdown-menu" id="mobileFloatingMenu">
+        <div class="floating-menu-content" id="floatingMenuContent">
+            <a href="#" class="floating-menu-item" data-tab="about"><i class="fas fa-user" style="color: var(--accent-green)"></i> About</a>
+            <a href="#" class="floating-menu-item" data-tab="experience"><i class="fas fa-briefcase" style="color: var(--accent-orange)"></i> Experience</a>
+            <a href="#" class="floating-menu-item" data-tab="skills"><i class="fas fa-code" style="color: var(--accent-yellow)"></i> Skills</a>
+            <a href="#" class="floating-menu-item" data-tab="projects"><i class="fas fa-rocket" style="color: var(--accent-purple)"></i> Projects</a>
+            <a href="#" class="floating-menu-item" data-tab="education"><i class="fas fa-graduation-cap" style="color: var(--accent-green)"></i> Education</a>
+            <a href="#" class="floating-menu-item" data-tab="contact"><i class="fas fa-envelope" style="color: var(--accent-orange)"></i> Contact</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
