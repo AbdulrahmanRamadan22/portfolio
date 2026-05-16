@@ -177,9 +177,6 @@ class PortfolioManager {
 
             console.log('Contact button clicked:', button);
 
-            e.preventDefault();
-            e.stopPropagation();
-
             const isPrimary = button.classList.contains('primary');
             const isSecondary = button.classList.contains('secondary');
             const card = button.closest('.contact-card');
@@ -190,6 +187,9 @@ class PortfolioManager {
                 console.error('No contact card found');
                 return;
             }
+
+            e.preventDefault();
+            e.stopPropagation();
 
             // Get contact type from the card
             const contactInfo = card.querySelector('.contact-info h3')?.textContent;
@@ -850,13 +850,19 @@ function initializeContactButtons() {
         // Re-query after cloning
         document.querySelectorAll('.contact-btn').forEach((button) => {
             button.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+                // Allow default behavior for download links, anchor tags, or buttons with inline onclick
+                if (button.hasAttribute('download') || button.tagName.toLowerCase() === 'a' || button.hasAttribute('onclick')) {
+                    console.log('Allowing native behavior for:', button.tagName);
+                    return;
+                }
 
                 console.log('Button clicked:', button.textContent.trim());
 
                 const card = button.closest('.contact-card');
                 if (!card) return;
+
+                e.preventDefault();
+                e.stopPropagation();
 
                 const contactType = card.querySelector('.contact-info h3')?.textContent;
                 const contactValue = card.querySelector('.contact-info p')?.textContent;
