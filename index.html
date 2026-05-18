@@ -70,9 +70,9 @@
                     <img src="abdelrahman.png" alt="Abdelrahman Ramadan" class="folder-avatar">
                     <span>ABDELRAHMAN RAMADAN</span>
                 </div>
-                <div class="theme-toggle" id="themeToggle" title="Toggle Theme">
-                    <i class="fas fa-lightbulb" id="themeIcon"></i>
-                </div>
+<div class="theme-toggle" id="themeToggle" title="Toggle Theme">
+    <i class="fas fa-lightbulb" id="themeIcon"></i>
+</div>
             </div>
             <div class="file-tree">
                 <div class="folder-item">
@@ -451,87 +451,9 @@
                         <h1>Work Experience</h1>
                     </div>
                     <div class="content-body">
-                        <div class="git-timeline">
+                        <div class="git-timeline" id="experience-timeline-container">
                             <div class="git-branch"></div>
-
-                            <div class="git-commit">
-                                <div class="commit-dot"></div>
-                                <div class="commit-content">
-                                    <div class="commit-header">
-                                        <span class="commit-date"
-                                            style="font-weight: bold; color: var(--accent-blue); font-size: 14px;"><i
-                                                class="far fa-calendar-alt"></i> Mar 2026 - Present</span>
-                                    </div>
-                                    <div class="commit-message">
-                                        <h3>Flutter Developer</h3>
-                                        <h4><a href="https://wratil.com" target="_blank">Freelance Project — Wratil <i
-                                                    class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a>
-                                            (Remote)</h4>
-                                    </div>
-                                    <div class="commit-details">
-                                        <p>A digital ecosystem connecting students with certified Quran teachers via
-                                            real-time video sessions, smart booking, and an AI-powered advisory system.
-                                        </p>
-                                        <ul>
-                                            <li>Integrated Agora RTC and Pusher for real-time voice/video sessions and
-                                                live notifications.</li>
-                                            <li>Built a commerce ecosystem with digital wallets, subscription packages,
-                                                and automated booking.</li>
-                                            <li>Secured API communication using Retrofit/Dio interceptors and encrypted
-                                                local storage for token management.</li>
-                                        </ul>
-                                        <div class="tech-stack mt-2">
-                                            <span class="tech-tag">BLoC</span>
-                                            <span class="tech-tag">Clean Arch</span>
-                                            <span class="tech-tag">Retrofit/Dio</span>
-                                            <span class="tech-tag">Agora RTC</span>
-                                            <span class="tech-tag">Pusher</span>
-                                            <span class="tech-tag">Localization</span>
-                                            <span class="tech-tag">Google Gemini</span>
-                                        </div>
-                                        <button class="contact-btn secondary mt-2" onclick="portfolioManager.openTab('wratil-details')" style="min-height: 34px; height: 34px; font-size: 12px; padding: 4px 12px; width: fit-content; margin: 10px 0 0 0; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;">
-                                            <i class="fab fa-markdown"></i> Explore Case Study
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="git-commit">
-                                <div class="commit-dot"></div>
-                                <div class="commit-content">
-                                    <div class="commit-header">
-                                        <span class="commit-date"
-                                            style="font-weight: bold; color: var(--accent-blue); font-size: 14px;"><i
-                                                class="far fa-calendar-alt"></i> Sep 2024 - Oct 2024</span>
-                                    </div>
-                                    <div class="commit-message">
-                                        <h3>Mobile Developer (Flutter Intern)</h3>
-                                        <h4><a href="https://instanteg.com/" target="_blank">Instant Software Solutions
-                                                <i class="fas fa-external-link-alt" style="font-size: 0.8em;"></i></a> -
-                                            Cairo, Egypt (Remote)</h4>
-                                    </div>
-                                    <div class="commit-details">
-                                        <ul>
-                                            <li>Developed responsive, user-friendly interfaces following modern UI/UX
-                                                principles, improving user engagement by 25%.</li>
-                                            <li>Integrated REST APIs with Retrofit/Dio, ensuring seamless data flow and
-                                                offline functionality using SQLite/SharedPreferences.</li>
-                                            <li>Debugged and resolved 15+ critical issues, reducing app crashes by 30%
-                                                and enhancing stability.</li>
-                                            <li>Implemented Clean Architecture, reducing code redundancy by 40% and
-                                                improving maintainability.</li>
-                                        </ul>
-                                        <div class="tech-stack mt-2">
-                                            <span class="tech-tag">Flutter</span>
-                                            <span class="tech-tag">Dart</span>
-                                            <span class="tech-tag">REST APIs</span>
-                                            <span class="tech-tag">Clean Architecture</span>
-                                            <span class="tech-tag">Local Storage</span>
-                                            <span class="tech-tag">Git</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- Experiences rendered dynamically -->
                         </div>
                     </div>
                 </div>
@@ -542,246 +464,19 @@
                         <h1>Technical Skills</h1>
                     </div>
                     <div class="content-body">
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h3>Languages & Frameworks</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Dart</span>
-                                    <span class="skill-tag">Flutter</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h3>Architecture & State Management</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Clean Architecture</span>
-                                    <span class="skill-tag">MVVM</span>
-                                    <span class="skill-tag">BLoC/Cubit</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h3>Backend & Integration</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">RESTful APIs</span>
-                                    <span class="skill-tag">Firebase</span>
-                                    <span class="skill-tag">Http</span>
-                                    <span class="skill-tag">Dio</span>
-                                    <span class="skill-tag">Retrofit</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h3>Local Storage</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">SQLite</span>
-                                    <span class="skill-tag">SharedPreferences</span>
-                                    <span class="skill-tag">Secure Storage</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h3>Software Principles</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">OOP</span>
-                                    <span class="skill-tag">SOLID Principles</span>
-                                    <span class="skill-tag">Clean Code</span>
-                                    <span class="skill-tag">Responsive & Adaptive Design</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h3>DevOps & CI/CD</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Fastlane</span>
-                                    <span class="skill-tag">Firebase App Distribution</span>
-                                </div>
-                            </div>
-
-                            <div class="skill-category">
-                                <h3>Tools</h3>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Git</span>
-                                    <span class="skill-tag">GitHub</span>
-                                    <span class="skill-tag">Postman</span>
-                                    <span class="skill-tag">Figma</span>
-                                </div>
-                            </div>
+                        <div class="skills-grid" id="skills-grid-container">
+                            <!-- Skills rendered dynamically -->
                         </div>
                     </div>
                 </div>
-
                 <!-- Projects Tab -->
                 <div class="tab-content" id="projects">
                     <div class="content-header">
                         <h1>Key Projects</h1>
                     </div>
                     <div class="content-body">
-                        <div class="premium-projects-grid">
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Jobizz — Career Platform</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/jobizz" target="_blank"><i
-                                                class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Graduation Project</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Mar 2025 -
-                                        Jul 2025</span>
-                                </div>
-                                <p class="project-description">Production-grade career platform built with Flutter and
-                                    Clean Architecture, designed to connect job seekers with opportunities through a
-                                    secure, scalable, and responsive mobile experience.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">Retrofit/Dio</span>
-                                    <span class="tech-tag">GetIt</span>
-                                    <span class="tech-tag">Freezed</span>
-                                </div>
-                                <div class="project-actions" style="margin-top: 15px;">
-                                    <button class="contact-btn primary" onclick="portfolioManager.openTab('jobizz-details')" style="width: 100%; min-height: 38px; height: 38px; font-size: 13px; margin: 0; justify-content: center;">
-                                        <i class="fab fa-markdown"></i> Explore Case Study
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Home-Ease</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/HomeEase_App"
-                                            target="_blank"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Mobile App</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Nov 2024 -
-                                        Feb 2025</span>
-                                </div>
-                                <p class="project-description">Mobile app providing home services (electrical, plumbing,
-                                    carpentry) with subscription options and multiple payment methods.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">Bloc</span>
-                                    <span class="tech-tag">Firebase</span>
-                                    <span class="tech-tag">Localization</span>
-                                </div>
-                            </div>
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Hospital Management App</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/hospital" target="_blank"><i
-                                                class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Mobile App</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Sep 2024 -
-                                        Oct 2024</span>
-                                </div>
-                                <p class="project-description">Digital system for patient records and hospital
-                                    operations via API integration with intuitive dashboards.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">Dio</span>
-                                    <span class="tech-tag">SQLite</span>
-                                </div>
-                            </div>
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Chat-App</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/chat_app" target="_blank"><i
-                                                class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Mobile App</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Jul 2024 -
-                                        Aug 2024</span>
-                                </div>
-                                <p class="project-description">Secure chat app with Firebase authentication, real-time
-                                    message delivery, and scalable cloud storage.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">Firebase</span>
-                                    <span class="tech-tag">Firestore</span>
-                                </div>
-                            </div>
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Todo-App</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/todo_app" target="_blank"><i
-                                                class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Mobile App</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> May 2024 -
-                                        Jun 2024</span>
-                                </div>
-                                <p class="project-description">Minimalist productivity app for daily task organization
-                                    featuring local database persistence.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">SqfLite</span>
-                                    <span class="tech-tag">Cubit</span>
-                                </div>
-                            </div>
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Movie-app</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/movie_app" target="_blank"><i
-                                                class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Mobile App</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Mar 2023 -
-                                        Apr 2024</span>
-                                </div>
-                                <p class="project-description">A sleek Movie Discovery App with real-time API data,
-                                    smooth animations, and a clean BLoC architecture.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">REST API</span>
-                                    <span class="tech-tag">Bloc</span>
-                                </div>
-                            </div>
-
-                            <div class="premium-project-card">
-                                <div class="project-header">
-                                    <h3>Ecommerce-app</h3>
-                                    <div class="project-links">
-                                        <a href="https://github.com/AbdulrahmanRamadan22/ecommerce" target="_blank"><i
-                                                class="fab fa-github"></i></a>
-                                    </div>
-                                </div>
-                                <div class="project-meta">
-                                    <span class="badge type-badge">Mobile App</span>
-                                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> Sep 2023 -
-                                        Feb 2024</span>
-                                </div>
-                                <p class="project-description">Mobile storefront with product listings, cart, delivery
-                                    tracking, secure authentication, and Google Maps integration.</p>
-                                <div class="tech-stack">
-                                    <span class="tech-tag">Flutter</span>
-                                    <span class="tech-tag">GetX</span>
-                                    <span class="tech-tag">Firebase</span>
-                                    <span class="tech-tag">Google Maps</span>
-                                </div>
-                            </div>
-
+                        <div class="premium-projects-grid" id="projects-grid-container">
+                            <!-- Projects rendered dynamically -->
                         </div>
                     </div>
                 </div>
@@ -792,408 +487,32 @@
                         <h1>Education & Certifications</h1>
                     </div>
                     <div class="content-body">
-                        <div class="education-timeline">
-                            <div class="education-item">
-                                <div class="education-period">Sep 2021 - Jul 2025</div>
-                                <div class="education-details">
-                                    <h3>Master's Degree in Computer Science</h3>
-                                    <h4>Higher Technological Institute, Beni Suef</h4>
-                                    <p>Overall Grade: Excellent (85%)</p>
-                                </div>
-                            </div>
-
-                            <div class="education-item">
-                                <div class="education-period">Feb 2024 - Oct 2024</div>
-                                <div class="education-details">
-                                    <h3>Flutter Diploma</h3>
-                                    <h4>Instant Software Solutions</h4>
-                                    <ul>
-                                        <li>Technologies: Flutter, Dart, Firebase, State Management</li>
-                                        <li>Concepts: OOP, Data Caching, RESTful APIs</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="education-item">
-                                <div class="education-period">Sep 2024 - Oct 2024</div>
-                                <div class="education-details">
-                                    <h3>Flutter Training</h3>
-                                    <h4>Instant Software Solutions</h4>
-                                    <ul>
-                                        <li>Developed a hospital management app with API integration for patient/data
-                                            tracking.</li>
-                                        <li>Responsive and easy-to-use user interfaces were developed.</li>
-                                        <li>Integrated REST APIs with Dio and implemented Clean Architecture.</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="education-timeline" id="education-timeline-container">
+                            <!-- Education rendered dynamically -->
                         </div>
 
-                        <div class="languages-section">
-                            <h3><i class="fas fa-language" style="color: var(--accent-green); margin-right: 8px;"></i>Languages</h3>
-                            <div class="language-skills">
-                                <div class="language-card">
-                                    <div class="language-card-header">
-                                        <div class="language-info">
-                                            <span class="language-name">Arabic</span>
-                                            <span class="language-badge native-badge">Native Speaker</span>
-                                        </div>
-                                        <div class="language-icon-wrapper">
-                                            <i class="fas fa-comments" style="color: var(--success-color);"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="language-card">
-                                    <div class="language-card-header">
-                                        <div class="language-info">
-                                            <span class="language-name">English</span>
-                                            <span class="language-badge professional-badge">Good</span>
-                                        </div>
-                                        <div class="language-icon-wrapper">
-                                            <i class="fas fa-globe-americas" style="color: var(--accent-blue);"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="languages-section" id="languages-section-container">
+                            <!-- Languages rendered dynamically -->
                         </div>
                     </div>
                 </div>
-
                 <!-- Contact Tab -->
                 <div class="tab-content" id="contact">
                     <div class="content-header">
                         <h1>Contact Information</h1>
                     </div>
                     <div class="content-body">
-                        <div class="contact-grid">
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-info">
-                                    <h3>Email</h3>
-                                    <p>abdelrahmanramadan1910@gmail.com</p>
-                                </div>
-                                <div class="contact-actions">
-                                    <button class="contact-btn primary">
-                                        <i class="fas fa-paper-plane"></i>
-                                        Send Email
-                                    </button>
-                                    <button class="contact-btn secondary">
-                                        <i class="fas fa-copy"></i>
-                                        Copy
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-info">
-                                    <h3>Phone</h3>
-                                    <p>+201099209084</p>
-                                </div>
-                                <div class="contact-actions">
-                                    <button class="contact-btn primary">
-                                        <i class="fas fa-phone"></i>
-                                        Call
-                                    </button>
-                                    <button class="contact-btn secondary">
-                                        <i class="fas fa-copy"></i>
-                                        Copy
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </div>
-                                <div class="contact-info">
-                                    <h3>LinkedIn</h3>
-                                    <p><a href="https://www.linkedin.com/in/abdelrahman-ramadan22/" target="_blank"
-                                            style="color: var(--accent-blue); text-decoration: none;">abdelrahman-ramadan22</a>
-                                    </p>
-                                </div>
-                                <div class="contact-actions">
-                                    <a href="https://www.linkedin.com/in/abdelrahman-ramadan22/" target="_blank"
-                                        class="contact-btn primary"
-                                        style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        Visit Profile
-                                    </a>
-                                    <button class="contact-btn secondary"
-                                        onclick="navigator.clipboard.writeText('https://www.linkedin.com/in/abdelrahman-ramadan22/')">
-                                        <i class="fas fa-copy"></i>
-                                        Copy Link
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fab fa-github"></i>
-                                </div>
-                                <div class="contact-info">
-                                    <h3>GitHub</h3>
-                                    <p><a href="https://github.com/AbdulrahmanRamadan22" target="_blank"
-                                            style="color: var(--accent-blue); text-decoration: none;">AbdulrahmanRamadan22</a>
-                                    </p>
-                                </div>
-                                <div class="contact-actions">
-                                    <a href="https://github.com/AbdulrahmanRamadan22" target="_blank"
-                                        class="contact-btn primary"
-                                        style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                        <i class="fas fa-external-link-alt"></i>
-                                        View Repositories
-                                    </a>
-                                    <button class="contact-btn secondary"
-                                        onclick="navigator.clipboard.writeText('https://github.com/AbdulrahmanRamadan22')">
-                                        <i class="fas fa-copy"></i>
-                                        Copy Link
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-info">
-                                    <h3>Location</h3>
-                                    <p>Cairo, Egypt</p>
-                                </div>
-                                <div class="contact-actions">
-                                    <button class="contact-btn primary">
-                                        <i class="fas fa-map"></i>
-                                        View on Map
-                                    </button>
-                                    <button class="contact-btn secondary">
-                                        <i class="fas fa-copy"></i>
-                                        Copy
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="contact-grid" id="contact-grid-container">
+                            <!-- Contacts rendered dynamically -->
                         </div>
 
-                        <div class="availability-section">
-                            <h3>Availability</h3>
-                            <div class="availability-card">
-                                <div class="status-indicator available"></div>
-                                <div class="availability-info">
-                                    <h4>Open to Opportunities</h4>
-                                    <p>Currently available for Flutter developer positions. Interested in challenging
-                                        projects involving Flutter, Dart, Clean Architecture, and building responsive
-                                        mobile applications.</p>
-                                </div>
-                            </div>
+                        <div class="availability-section" id="availability-section-container">
+                            <!-- Availability rendered dynamically -->
                         </div>
                     </div>
                 </div>
-
-                <!-- Jobizz Case Study Tab -->
-                <div class="tab-content" id="jobizz-details" style="--project-glow: rgba(0, 122, 204, 0.25);">
-                    <div class="markdown-preview">
-                        <div class="markdown-header">
-                            <span class="markdown-title"><i class="fab fa-markdown"></i> jobizz_case_study.md (Preview)</span>
-                            <div class="markdown-actions">
-                                <button class="markdown-action-btn" onclick="portfolioManager.closeTab('jobizz-details')"><i class="fas fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                        <div class="markdown-body">
-                            <div class="case-study-hero">
-                                <h1>Jobizz — Production Career Platform</h1>
-                                <p class="lead">A complete job discovery and application platform built using Clean Architecture and Flutter BLoC.</p>
-                            </div>
-                            
-                            <div class="case-study-grid">
-                                <div class="case-study-left">
-                                    <section>
-                                        <h3><i class="fas fa-bullseye"></i> Executive Summary</h3>
-                                        <p>Jobizz is a premium mobile career portal connecting talent with modern tech recruiters. The system utilizes industry-standard best practices in mobile engineering: a domain-driven Clean Architecture structure, robust offline capabilities, secure multi-factor session management, and adaptive layout presentation.</p>
-                                    </section>
-                                    
-                                    <section>
-                                        <h3><i class="fas fa-layer-group"></i> Architecture & State Management</h3>
-                                        <p>The application relies on <strong>Domain-Driven Design (DDD)</strong> Clean Architecture separated into three strict layers:</p>
-                                        <ul>
-                                            <li><strong>Data Layer:</strong> Dio client, Retrofit API definitions, local SqfLite storage caches, and Repository implementations.</li>
-                                            <li><strong>Domain Layer:</strong> Pure Dart Entity classes, Value Objects, and isolated Use Case classes enforcing SOLID principles.</li>
-                                            <li><strong>Presentation Layer:</strong> State management powered by <strong>BLoC/Cubit</strong> to keep the UI entirely reactive, separating business logic from design.</li>
-                                        </ul>
-                                    </section>
-                                    
-                                    <section class="code-section">
-                                        <h3><i class="fas fa-code"></i> Secure Interceptor Implementation</h3>
-                                        <p>Here is an abstract showcasing how secure API tokens are managed dynamically using Retrofit & Dio Interceptors on the data layer:</p>
-                                        <div class="code-editor-mock">
-                                            <div class="editor-header">
-                                                <span class="editor-dot red"></span>
-                                                <span class="editor-dot yellow"></span>
-                                                <span class="editor-dot green"></span>
-                                                <span class="editor-filename">auth_interceptor.dart</span>
-                                            </div>
-                                            <pre><code><span class="syntax-keyword">class</span> <span class="syntax-type">AuthInterceptor</span> <span class="syntax-keyword">extends</span> <span class="syntax-type">Interceptor</span> {
-  <span class="syntax-keyword">final</span> <span class="syntax-type">SecureStorage</span> _storage;
-
-  <span class="syntax-type">AuthInterceptor</span>(<span class="syntax-keyword">this</span>._storage);
-
-  <span class="syntax-annotation">@override</span>
-  <span class="syntax-keyword">void</span> <span class="syntax-function">onRequest</span>(<span class="syntax-type">RequestOptions</span> options, <span class="syntax-type">RequestInterceptorHandler</span> handler) <span class="syntax-keyword">async</span> {
-    <span class="syntax-keyword">final</span> token = <span class="syntax-keyword">await</span> _storage.<span class="syntax-function">read</span>(key: <span class="syntax-string">'jwt_token'</span>);
-    <span class="syntax-keyword">if</span> (token != <span class="syntax-keyword">null</span>) {
-      options.headers[<span class="syntax-string">'Authorization'</span>] = <span class="syntax-string">'Bearer $token'</span>;
-    }
-    <span class="syntax-keyword">return</span> <span class="syntax-keyword">super</span>.<span class="syntax-function">onRequest</span>(options, handler);
-  }
-}</code></pre>
-                                        </div>
-                                    </section>
-                                </div>
-                                
-                                <div class="case-study-right">
-                                    <div class="mockup-container">
-                                        <h4>📱 Interactive Application Screens</h4>
-                                        <p class="mockup-hint">Click the buttons below the device to swap active screens!</p>
-                                        
-                                        <!-- Device Wrapper -->
-                                        <div class="device-frame">
-                                            <div class="device-screen">
-                                                <img id="jobizz-screen-img" src="abdelrahman.png" alt="Jobizz App Screen" class="app-screenshot">
-                                                <div class="device-placeholder-overlay" id="jobizz-placeholder">
-                                                    <div class="overlay-content">
-                                                        <i class="fas fa-mobile-alt"></i>
-                                                        <span>Select a Screen Below</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="device-home-button"></div>
-                                        </div>
-                                        
-                                        <!-- Interactive Mockup Controls -->
-                                        <div class="mockup-controls">
-                                            <button class="mockup-btn active" onclick="portfolioManager.changeScreenshot('jobizz', 'jobizz_home.png', this)">
-                                                <i class="fas fa-home"></i> Home View
-                                            </button>
-                                            <button class="mockup-btn" onclick="portfolioManager.changeScreenshot('jobizz', 'jobizz_jobs.png', this)">
-                                                <i class="fas fa-briefcase"></i> Job Feed
-                                            </button>
-                                            <button class="mockup-btn" onclick="portfolioManager.changeScreenshot('jobizz', 'jobizz_chat.png', this)">
-                                                <i class="fas fa-comments"></i> Live Chat
-                                            </button>
-                                            <button class="mockup-btn" onclick="portfolioManager.changeScreenshot('jobizz', 'jobizz_profile.png', this)">
-                                                <i class="fas fa-user-circle"></i> Profile View
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wratil Case Study Tab -->
-                <div class="tab-content" id="wratil-details" style="--project-glow: rgba(46, 204, 113, 0.25);">
-                    <div class="markdown-preview">
-                        <div class="markdown-header">
-                            <span class="markdown-title"><i class="fab fa-markdown"></i> wratil_case_study.md (Preview)</span>
-                            <div class="markdown-actions">
-                                <button class="markdown-action-btn" onclick="portfolioManager.closeTab('wratil-details')"><i class="fas fa-times"></i> Close</button>
-                            </div>
-                        </div>
-                        <div class="markdown-body">
-                            <div class="case-study-hero">
-                                <h1>Wratil — Student & Teacher Quran Ecosystem</h1>
-                                <p class="lead">A digital ecosystem connecting students with certified Quran teachers using Agora RTC video sessions and Google Gemini AI.</p>
-                            </div>
-                            
-                            <div class="case-study-grid">
-                                <div class="case-study-left">
-                                    <section>
-                                        <h3><i class="fas fa-bullseye"></i> Executive Summary</h3>
-                                        <p>Wratil is a production-grade educational platform featuring real-time audio/video sessions, automated session booking, integrated digital wallets, and AI-powered learning analytics. It solves the complex engineering challenge of low-latency video stream orchestration and dynamic billing synchronization in cross-platform mobile environments.</p>
-                                    </section>
-                                    
-                                    <section>
-                                        <h3><i class="fas fa-video"></i> Real-time Video Integration (Agora RTC)</h3>
-                                        <p>The core session feature relies on <strong>Agora RTC SDK</strong> combined with **Pusher Channels** for signaling and call state tracking. To ensure a professional experience:</p>
-                                        <ul>
-                                            <li><strong>Call Orchestration:</strong> Implemented specialized Cubits tracking token verification, microphone/camera permissions, connection health, and remote peer states.</li>
-                                            <li><strong>State Synchronization:</strong> Real-time alerts are pushed dynamically using Pusher websockets to ensure zero-delay session start notifications.</li>
-                                        </ul>
-                                    </section>
-                                    
-                                    <section class="code-section">
-                                        <h3><i class="fas fa-code"></i> Agora Room Token Joining Code</h3>
-                                        <p>Below is a clean snippet showing how dynamic RTC channel tokens are requested and mapped for the Agora engine:</p>
-                                        <div class="code-editor-mock">
-                                            <div class="editor-header">
-                                                <span class="editor-dot red"></span>
-                                                <span class="editor-dot yellow"></span>
-                                                <span class="editor-dot green"></span>
-                                                <span class="editor-filename">agora_service.dart</span>
-                                            </div>
-                                            <pre><code><span class="syntax-type">Future</span>&lt;<span class="syntax-keyword">void</span>&gt; <span class="syntax-function">joinChannel</span>({
-  <span class="syntax-keyword">required</span> <span class="syntax-type">String</span> channelName,
-  <span class="syntax-keyword">required</span> <span class="syntax-type">String</span> token,
-  <span class="syntax-keyword">required</span> <span class="syntax-type">int</span> uid,
-}) <span class="syntax-keyword">async</span> {
-  <span class="syntax-keyword">await</span> _engine.<span class="syntax-function">joinChannel</span>(
-    token: token,
-    channelId: channelName,
-    uid: uid,
-    options: <span class="syntax-keyword">const</span> <span class="syntax-type">ChannelMediaOptions</span>(
-      clientRoleType: <span class="syntax-type">ClientRoleType</span>.clientRoleBroadcaster,
-      channelProfile: <span class="syntax-type">ChannelProfileType</span>.channelProfileCommunication,
-    ),
-  );
-}</code></pre>
-                                        </div>
-                                    </section>
-                                </div>
-                                
-                                <div class="case-study-right">
-                                    <div class="mockup-container">
-                                        <h4>📱 Interactive Application Screens</h4>
-                                        <p class="mockup-hint">Click the buttons below the device to swap active screens!</p>
-                                        
-                                        <!-- Device Wrapper -->
-                                        <div class="device-frame">
-                                            <div class="device-screen">
-                                                <img id="wratil-screen-img" src="abdelrahman.png" alt="Wratil App Screen" class="app-screenshot">
-                                                <div class="device-placeholder-overlay" id="wratil-placeholder">
-                                                    <div class="overlay-content">
-                                                        <i class="fas fa-mobile-alt"></i>
-                                                        <span>Select a Screen Below</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="device-home-button"></div>
-                                        </div>
-                                        
-                                        <!-- Interactive Mockup Controls -->
-                                        <div class="mockup-controls">
-                                            <button class="mockup-btn active" onclick="portfolioManager.changeScreenshot('wratil', 'wratil_home.png', this)">
-                                                <i class="fas fa-home"></i> Home View
-                                            </button>
-                                            <button class="mockup-btn" onclick="portfolioManager.changeScreenshot('wratil', 'wratil_booking.png', this)">
-                                                <i class="fas fa-calendar-check"></i> Booking View
-                                            </button>
-                                            <button class="mockup-btn" onclick="portfolioManager.changeScreenshot('wratil', 'wratil_session.png', this)">
-                                                <i class="fas fa-video"></i> Video Session
-                                            </button>
-                                            <button class="mockup-btn" onclick="portfolioManager.changeScreenshot('wratil', 'wratil_wallet.png', this)">
-                                                <i class="fas fa-wallet"></i> Digital Wallet
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Case Studies rendered dynamically -->
+                <div id="case-studies-wrapper"></div>
 
                 <!-- CV PDF Simulated Viewer Tab -->
                 <div class="tab-content" id="cv-details">
@@ -1272,6 +591,7 @@
         </div>
     </div>
 
+    <script src="portfolio-data.js"></script>
     <script src="script.js"></script>
 </body>
 

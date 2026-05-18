@@ -3859,3 +3859,662 @@ section li::before {
     border-color: rgba(0, 0, 0, 0.08);
     color: #111111 !important;
 }
+
+/* Premium Case Study Button */
+.premium-case-study-btn {
+    width: 100% !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    justify-content: center !important;
+    margin: 10px 0 0 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #00d2ff 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
+
+.premium-case-study-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.premium-case-study-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 122, 204, 0.6) !important;
+    background: linear-gradient(135deg, #00d2ff 0%, var(--accent-blue) 100%) !important;
+}
+
+.premium-case-study-btn:hover::before {
+    left: 100%;
+}
+
+.premium-case-study-btn i {
+    font-size: 16px !important;
+}
+
+/* Experience timeline specific button adjustments */
+.experience-case-study-btn {
+    width: fit-content !important;
+    max-width: 320px !important;
+    padding: 0 24px !important;
+    display: inline-flex !important;
+}
+
+/* ==========================================================================
+   LIGHT MODE — Git Timeline / Experience Tab Visual Fixes
+   ========================================================================== */
+[data-theme="light"] .git-branch {
+    background: linear-gradient(to bottom, #005a9e 0%, #008060 50%, #a65e2b 100%) !important;
+    box-shadow: 0 0 10px rgba(0, 90, 158, 0.1) !important;
+}
+
+[data-theme="light"] .commit-dot {
+    background: #ffffff !important;
+    border-color: var(--accent-blue) !important;
+}
+
+[data-theme="light"] .git-commit:nth-child(even) .commit-dot {
+    border-color: var(--accent-green) !important;
+}
+
+[data-theme="light"] .git-commit:hover .commit-dot {
+    background: var(--accent-blue) !important;
+    box-shadow: 0 0 10px rgba(0, 90, 158, 0.3) !important;
+}
+
+[data-theme="light"] .commit-details {
+    background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%) !important;
+    border: 1px solid var(--border-color) !important;
+    border-left: 4px solid var(--accent-blue) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] .git-commit:nth-child(even) .commit-details {
+    border-left-color: var(--accent-green) !important;
+}
+
+[data-theme="light"] .git-commit:hover .commit-details {
+    border-color: var(--border-color) !important;
+    border-left-width: 6px !important;
+    box-shadow: 0 12px 30px rgba(0, 90, 158, 0.08) !important;
+}
+
+[data-theme="light"] .commit-details p {
+    color: #333333 !important;
+}
+
+[data-theme="light"] .commit-details ul li {
+    color: #444444 !important;
+}
+
+[data-theme="light"] .commit-details .tech-tag {
+    background: rgba(0, 90, 158, 0.06) !important;
+    color: var(--accent-blue) !important;
+    border: 1px solid rgba(0, 90, 158, 0.15) !important;
+}
+
+[data-theme="light"] .commit-details .tech-tag:hover {
+    background: rgba(0, 90, 158, 0.12) !important;
+    color: var(--accent-blue) !important;
+}
+
+/* ==========================================================================
+   Premium Markdown Case Study Interactive Presentation Components
+   ========================================================================== */
+
+/* 1. Case Study Hero Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 122, 204, 0.15);
+    border: 1px solid rgba(0, 122, 204, 0.3);
+    color: #00d2ff;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-family: 'Consolas', monospace;
+    width: fit-content;
+}
+
+/* 2. Premium Grid Sections */
+.premium-case-section {
+    background: rgba(30, 30, 30, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.premium-case-section:hover {
+    border-color: rgba(0, 122, 204, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 122, 204, 0.05);
+    transform: translateY(-2px);
+}
+
+.section-anchor-bar {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--accent-blue), var(--accent-green));
+    border-radius: 4px 0 0 4px;
+    opacity: 0.6;
+}
+
+.section-title-premium {
+    font-size: 19px !important;
+    color: var(--accent-blue) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 18px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600 !important;
+}
+
+.section-title-premium i {
+    font-size: 18px;
+}
+
+.section-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+/* 3. Executive Summary Bento Grid */
+.summary-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.summary-bento-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 16px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.summary-bento-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(0, 122, 204, 0.25);
+    transform: translateY(-3px);
+}
+
+.bento-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.bento-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(0, 122, 204, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-blue);
+    font-size: 14px;
+}
+
+.summary-bento-card:nth-child(2) .bento-icon-wrapper {
+    background: rgba(78, 201, 176, 0.15);
+    color: var(--accent-green);
+}
+
+.summary-bento-card:nth-child(3) .bento-icon-wrapper {
+    background: rgba(206, 145, 120, 0.15);
+    color: var(--accent-orange);
+}
+
+.bento-card-header h4 {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0;
+}
+
+.bento-card-body {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* 4. Architecture / Feature Cards Matrix Grid */
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 15px;
+}
+
+.architecture-card {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.architecture-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(78, 201, 176, 0.2);
+    transform: translateX(3px);
+}
+
+.arch-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.arch-bullet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-green);
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+.arch-card-header h5 {
+    font-size: 13px;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0;
+}
+
+.arch-card-body {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* 5. Realistic Premium VS Code simulated Editor Window */
+.premium-editor-window {
+    background-color: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+.editor-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #252526;
+    padding: 0 16px;
+    height: 35px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.editor-left-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.editor-left-controls .control-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.editor-left-controls .control-dot.red { background-color: #ff5f57; }
+.editor-left-controls .control-dot.yellow { background-color: #ffbd2e; }
+.editor-left-controls .control-dot.green { background-color: #28ca42; }
+
+.editor-active-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #1e1e1e;
+    height: 100%;
+    padding: 0 16px;
+    border-top: 2px solid var(--accent-blue);
+    font-size: 11.5px;
+    color: #ffffff;
+}
+
+.tab-filename {
+    font-size: 11px;
+}
+
+.editor-workspace {
+    display: flex;
+    flex: 1;
+    background-color: #1e1e1e;
+    min-height: 180px;
+}
+
+.editor-lines-sidebar {
+    width: 40px;
+    background-color: #1e1e1e;
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+    user-select: none;
+}
+
+.editor-lines-sidebar .line-number {
+    font-size: 12px;
+    color: #858585;
+    line-height: 1.5;
+    height: 18px;
+}
+
+.editor-code-pane {
+    flex: 1;
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+.editor-code-pane code {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #abb2bf;
+    font-family: inherit;
+    display: block;
+}
+
+.editor-statusbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #007acc;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 4px 12px;
+    user-select: none;
+}
+
+.status-left, .status-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-left span, .status-right span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 6. Engineering Challenges Combat Matrices */
+.combat-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.challenge-combat-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.challenge-combat-card:hover {
+    border-color: rgba(244, 135, 113, 0.25);
+    transform: translateY(-2px);
+}
+
+.combat-side {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.combat-side.challenge-side {
+    background: rgba(244, 135, 113, 0.03);
+    border-right: 1px dashed rgba(255, 255, 255, 0.04);
+}
+
+.combat-side.solution-side {
+    background: rgba(78, 201, 176, 0.03);
+}
+
+.combat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.combat-badge.challenge {
+    background: rgba(244, 135, 113, 0.15);
+    color: #f48771;
+    border: 1px solid rgba(244, 135, 113, 0.25);
+}
+
+.combat-badge.solution {
+    background: rgba(78, 201, 176, 0.15);
+    color: #4ec9b0;
+    border: 1px solid rgba(78, 201, 176, 0.25);
+}
+
+.combat-side p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.combat-side.solution-side p {
+    color: var(--text-primary);
+}
+
+/* 7. categorized tech stack matrix */
+.tech-stack-section {
+    margin-top: 10px;
+}
+
+.tech-matrix-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tech-matrix-tag {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 11.5px;
+    font-family: 'Consolas', monospace;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tech-matrix-tag:hover {
+    background: rgba(0, 122, 204, 0.05);
+    border-color: rgba(0, 122, 204, 0.25);
+    transform: translateY(-2px);
+}
+
+.tech-tag-category {
+    background: rgba(0, 122, 204, 0.15);
+    color: #00d2ff;
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
+.tech-tag-name {
+    color: var(--text-primary);
+    padding: 4px 10px;
+}
+
+/* ==========================================================================
+   LIGHT MODE OVERRIDES — Premium Case Study Interactive Components
+   ========================================================================== */
+[data-theme="light"] .premium-case-section {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-theme="light"] .premium-case-section:hover {
+    border-color: rgba(0, 90, 158, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(0, 90, 158, 0.06) !important;
+}
+
+[data-theme="light"] .summary-bento-card {
+    background: rgba(0, 0, 0, 0.015) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .summary-bento-card:hover {
+    background: rgba(0, 0, 0, 0.03) !important;
+    border-color: rgba(0, 90, 158, 0.2) !important;
+}
+
+[data-theme="light"] .bento-card-header h4 {
+    color: #111111 !important;
+}
+
+[data-theme="light"] .bento-card-body {
+    color: #555555 !important;
+}
+
+[data-theme="light"] .architecture-card {
+    background: rgba(0, 0, 0, 0.01) !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .architecture-card:hover {
+    background: rgba(0, 0, 0, 0.02) !important;
+    border-color: rgba(0, 128, 96, 0.2) !important;
+}
+
+[data-theme="light"] .arch-card-header h5 {
+    color: #111111 !important;
+}
+
+[data-theme="light"] .arch-card-body {
+    color: #555555 !important;
+}
+
+[data-theme="light"] .challenge-combat-card {
+    background: rgba(0, 0, 0, 0.01) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .combat-side.challenge-side {
+    background: rgba(215, 58, 73, 0.015) !important;
+    border-right-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .combat-side.solution-side {
+    background: rgba(0, 128, 96, 0.015) !important;
+}
+
+[data-theme="light"] .combat-side p {
+    color: #555555 !important;
+}
+
+[data-theme="light"] .combat-side.solution-side p {
+    color: #111111 !important;
+}
+
+[data-theme="light"] .tech-matrix-tag {
+    background: rgba(0, 0, 0, 0.015) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .tech-matrix-tag:hover {
+    background: rgba(0, 90, 158, 0.04) !important;
+    border-color: rgba(0, 90, 158, 0.2) !important;
+}
+
+[data-theme="light"] .tech-tag-name {
+    color: #333333 !important;
+}
+
+[data-theme="light"] .tech-tag-category {
+    background: rgba(0, 90, 158, 0.1) !important;
+    color: var(--accent-blue) !important;
+}
+
+/* responsive grids for bento and matrix */
+@media (max-width: 991px) {
+    .summary-bento-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+    
+    .architecture-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+    }
+    
+    .challenge-combat-card {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .combat-side.challenge-side {
+        border-right: none !important;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.04) !important;
+    }
+    
+    [data-theme="light"] .combat-side.challenge-side {
+        border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+    }
+}
+

@@ -76,6 +76,7 @@ class PortfolioManager {
     }
 
     init() {
+        this.renderData(); // Dynamic rendering injection
         this.setupEventListeners();
         this.setupKeyboardShortcuts();
         this.setupDragAndDrop();
@@ -85,6 +86,474 @@ class PortfolioManager {
         setTimeout(() => {
             document.getElementById('mainContainer').style.display = 'flex';
         }, 4500);
+    }
+
+    renderData() {
+        console.log('Dynamically rendering portfolio data...');
+        if (!window.portfolioData) {
+            console.error('portfolioData not found! Make sure portfolio-data.js is loaded first.');
+            return;
+        }
+        this._renderExperiences();
+        this._renderProjects();
+        this._renderSkills();
+        this._renderEducation();
+        this._renderContact();
+        this._renderCaseStudies();
+    }
+
+    _renderExperiences() {
+        const container = document.getElementById('experience-timeline-container');
+        if (!container || !window.portfolioData.experiences) return;
+
+        container.innerHTML = '<div class="git-branch"></div>';
+        window.portfolioData.experiences.forEach(exp => {
+            const commit = document.createElement('div');
+            commit.className = 'git-commit';
+            const bulletsHtml = exp.bullets.map(b => `<li>${b}</li>`).join('');
+            const techHtml = exp.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+            const caseStudyBtn = exp.caseStudyTab ? `
+                <div class="project-actions" style="margin-top:15px;">
+                    <button class="contact-btn primary premium-case-study-btn experience-case-study-btn" onclick="portfolioManager.openTab('${exp.caseStudyTab}')">
+                        <i class="fab fa-markdown"></i> View Case Study Details
+                    </button>
+                </div>` : '';
+
+            commit.innerHTML = `
+                <div class="commit-dot"></div>
+                <div class="commit-content">
+                    <div class="commit-header">
+                        <span class="commit-date" style="font-weight:bold;color:var(--accent-blue);font-size:14px;">
+                            <i class="far fa-calendar-alt"></i> ${exp.date}
+                        </span>
+                    </div>
+                    <div class="commit-message">
+                        <h3>${exp.title}</h3>
+                        <h4>
+                            <a href="${exp.companyUrl}" target="_blank">${exp.company}
+                                <i class="fas fa-external-link-alt" style="font-size:0.8em;"></i>
+                            </a>${exp.location ? ` - ${exp.location}` : ''}
+                        </h4>
+                    </div>
+                    <div class="commit-details">
+                        ${exp.description ? `<p>${exp.description}</p>` : ''}
+                        <ul>${bulletsHtml}</ul>
+                        <div class="tech-stack mt-2">${techHtml}</div>
+                        ${caseStudyBtn}
+                    </div>
+                </div>`;
+            container.appendChild(commit);
+        });
+    }
+
+    _renderProjects() {
+        const container = document.getElementById('projects-grid-container');
+        if (!container || !window.portfolioData.projects) return;
+
+        container.innerHTML = '';
+        window.portfolioData.projects.forEach(proj => {
+            const card = document.createElement('div');
+            card.className = 'premium-project-card';
+            const techHtml = proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+            const actionBtn = proj.caseStudyTab ? `
+                <div class="project-actions" style="margin-top:15px;">
+                    <button class="contact-btn primary premium-case-study-btn" onclick="portfolioManager.openTab('${proj.caseStudyTab}')">
+                        <i class="fab fa-markdown"></i> View Case Study Details
+                    </button>
+                </div>` : '';
+
+            card.innerHTML = `
+                <div class="project-header">
+                    <h3>${proj.title}</h3>
+                    <div class="project-links">
+                        <a href="${proj.githubUrl}" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-meta">
+                    <span class="badge type-badge">${proj.type}</span>
+                    <span class="badge duration-badge"><i class="far fa-calendar-alt"></i> ${proj.date}</span>
+                </div>
+                <p class="project-description">${proj.description}</p>
+                <div class="tech-stack">${techHtml}</div>
+                ${actionBtn}`;
+            container.appendChild(card);
+        });
+    }
+
+    _renderSkills() {
+        const container = document.getElementById('skills-grid-container');
+        if (!container || !window.portfolioData.skills) return;
+
+        container.innerHTML = '';
+        window.portfolioData.skills.forEach(group => {
+            const cat = document.createElement('div');
+            cat.className = 'skill-category';
+            const tagsHtml = group.tags.map(t => `<span class="skill-tag">${t}</span>`).join('');
+            cat.innerHTML = `
+                <h3>${group.category}</h3>
+                <div class="skill-tags">${tagsHtml}</div>`;
+            container.appendChild(cat);
+        });
+    }
+
+    _renderEducation() {
+        const eduContainer = document.getElementById('education-timeline-container');
+        const langContainer = document.getElementById('languages-section-container');
+
+        // Education items
+        if (eduContainer && window.portfolioData.education) {
+            eduContainer.innerHTML = '';
+            window.portfolioData.education.forEach(edu => {
+                const item = document.createElement('div');
+                item.className = 'education-item';
+
+                let bodyHtml = '';
+                if (edu.description) {
+                    bodyHtml = `<p>${edu.description}</p>`;
+                } else if (edu.bullets) {
+                    bodyHtml = `<ul>${edu.bullets.map(b => `<li>${b}</li>`).join('')}</ul>`;
+                }
+
+                item.innerHTML = `
+                    <div class="education-period">${edu.period}</div>
+                    <div class="education-details">
+                        <h3>${edu.degree}</h3>
+                        <h4>${edu.institution}</h4>
+                        ${bodyHtml}
+                    </div>`;
+                eduContainer.appendChild(item);
+            });
+        }
+
+        // Languages
+        if (langContainer && window.portfolioData.languages) {
+            langContainer.innerHTML = `
+                <h3><i class="fas fa-language" style="color:var(--accent-green);margin-right:8px;"></i>Languages</h3>
+                <div class="language-skills"></div>`;
+            const langSkills = langContainer.querySelector('.language-skills');
+
+            window.portfolioData.languages.forEach(lang => {
+                const card = document.createElement('div');
+                card.className = 'language-card';
+                card.innerHTML = `
+                    <div class="language-card-header">
+                        <div class="language-info">
+                            <span class="language-name">${lang.name}</span>
+                            <span class="language-badge ${lang.badgeClass}">${lang.badge}</span>
+                        </div>
+                        <div class="language-icon-wrapper">
+                            <i class="${lang.icon}" style="color:${lang.color};"></i>
+                        </div>
+                    </div>`;
+                langSkills.appendChild(card);
+            });
+        }
+    }
+
+    _renderContact() {
+        const contactContainer = document.getElementById('contact-grid-container');
+        const availContainer = document.getElementById('availability-section-container');
+
+        // Contact cards
+        if (contactContainer && window.portfolioData.contact) {
+            contactContainer.innerHTML = '';
+            window.portfolioData.contact.forEach(c => {
+                const card = document.createElement('div');
+                card.className = 'contact-card';
+
+                // Build primary action button/link
+                let primaryBtn = '';
+                if (c.primaryAction === 'link' && c.url) {
+                    primaryBtn = `
+                        <a href="${c.url}" target="_blank" class="contact-btn primary"
+                            style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">
+                            <i class="${c.primaryIcon}"></i> ${c.primaryLabel}
+                        </a>`;
+                } else if (c.primaryAction === 'email') {
+                    primaryBtn = `
+                        <a href="mailto:${c.value}" class="contact-btn primary"
+                            style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">
+                            <i class="${c.primaryIcon}"></i> ${c.primaryLabel}
+                        </a>`;
+                } else if (c.primaryAction === 'phone') {
+                    primaryBtn = `
+                        <a href="tel:${c.value}" class="contact-btn primary"
+                            style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">
+                            <i class="${c.primaryIcon}"></i> ${c.primaryLabel}
+                        </a>`;
+                } else if (c.primaryAction === 'map') {
+                    primaryBtn = `
+                        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.value)}" target="_blank"
+                            class="contact-btn primary"
+                            style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">
+                            <i class="${c.primaryIcon}"></i> ${c.primaryLabel}
+                        </a>`;
+                }
+
+                // Determine the copy value
+                const copyValue = c.url || c.value;
+                const secondaryBtn = `
+                    <button class="contact-btn secondary" onclick="navigator.clipboard.writeText('${copyValue}').then(()=>{this.innerHTML='<i class=\\'fas fa-check\\'></i> Copied!';setTimeout(()=>{this.innerHTML='<i class=\\'${c.secondaryIcon}\\'></i> ${c.secondaryLabel}';},2000)})">
+                        <i class="${c.secondaryIcon}"></i> ${c.secondaryLabel}
+                    </button>`;
+
+                // Value display (link or plain text)
+                const displayValue = c.url
+                    ? `<a href="${c.url}" target="_blank" style="color:var(--accent-blue);text-decoration:none;">${c.value}</a>`
+                    : c.value;
+
+                card.innerHTML = `
+                    <div class="contact-icon"><i class="${c.icon}"></i></div>
+                    <div class="contact-info">
+                        <h3>${c.type}</h3>
+                        <p>${displayValue}</p>
+                    </div>
+                    <div class="contact-actions">
+                        ${primaryBtn}
+                        ${secondaryBtn}
+                    </div>`;
+                contactContainer.appendChild(card);
+            });
+        }
+
+        // Availability section
+        if (availContainer && window.portfolioData.availability) {
+            const av = window.portfolioData.availability;
+            availContainer.innerHTML = `
+                <h3>Availability</h3>
+                <div class="availability-card">
+                    <div class="status-indicator ${av.statusClass}"></div>
+                    <div class="availability-info">
+                        <h4>${av.status}</h4>
+                        <p>${av.description}</p>
+                    </div>
+                </div>`;
+        }
+    }
+
+    _renderCaseStudies() {
+        const wrapper = document.getElementById('case-studies-wrapper');
+        if (!wrapper || !window.portfolioData.caseStudies) return;
+
+        wrapper.innerHTML = '';
+
+        window.portfolioData.caseStudies.forEach(cs => {
+            const tab = document.createElement('div');
+            tab.className = 'tab-content';
+            tab.id = cs.tabId;
+            tab.style.setProperty('--project-glow', cs.glowColor);
+
+            // Build sections HTML
+            let sectionsHtml = cs.sections.map(sec => {
+                let bodyHtml = `<p class="section-paragraph">${sec.content}</p>`;
+
+                // Executive Summary Bento Grid
+                if (sec.title.includes("Summary") && sec.bullets) {
+                    const icons = ["fa-users", "fa-exclamation-triangle", "fa-chart-line"];
+                    const categories = ["Target Audience", "Core Problem Solved", "Project Scale"];
+                    
+                    const gridCards = sec.bullets.map((b, idx) => `
+                        <div class="summary-bento-card">
+                            <div class="bento-card-header">
+                                <div class="bento-icon-wrapper"><i class="fas ${icons[idx] || 'fa-check'}"></i></div>
+                                <h4>${categories[idx] || 'Highlight'}</h4>
+                            </div>
+                            <div class="bento-card-body">${b}</div>
+                        </div>
+                    `).join('');
+                    
+                    bodyHtml = `<div class="summary-bento-grid">${gridCards}</div>`;
+                }
+                
+                // Architecture and feature matrices
+                else if (sec.bullets && !sec.title.includes("Challenges") && !sec.isCode) {
+                    const bulletsGrid = sec.bullets.map(b => {
+                        const boldMatch = b.match(/<strong>(.*?)<\/strong>:(.*)/) || b.match(/<em>(.*?)<\/em>:(.*)/);
+                        let titleText = "Key Detail";
+                        let descText = b;
+                        
+                        if (boldMatch) {
+                            titleText = boldMatch[1];
+                            descText = boldMatch[2];
+                        }
+                        
+                        return `
+                            <div class="architecture-card">
+                                <div class="arch-card-header">
+                                    <span class="arch-bullet-dot"></span>
+                                    <h5>${titleText}</h5>
+                                </div>
+                                <p class="arch-card-body">${descText}</p>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    bodyHtml = `
+                        <p class="section-paragraph">${sec.content}</p>
+                        <div class="architecture-grid">
+                            ${bulletsGrid}
+                        </div>
+                    `;
+                }
+
+                // Interactive Simulated VS Code Editor
+                if (sec.isCode) {
+                    // Pre-render syntax highlighted code with realistic line numbers
+                    const codeLines = sec.code.split('\n');
+                    const lineNumbersHtml = codeLines.map((_, i) => `<span class="line-number">${i + 1}</span>`).join('');
+                    const formattedCodeHtml = codeLines.join('\n');
+
+                    bodyHtml += `
+                        <div class="premium-editor-window">
+                            <div class="editor-titlebar">
+                                <div class="editor-left-controls">
+                                    <span class="control-dot red"></span>
+                                    <span class="control-dot yellow"></span>
+                                    <span class="control-dot green"></span>
+                                </div>
+                                <div class="editor-active-tab">
+                                    <i class="fab fa-google" style="color: #00d2ff; font-size: 11px;"></i>
+                                    <span class="tab-filename">${sec.codeFile}</span>
+                                </div>
+                            </div>
+                            <div class="editor-workspace">
+                                <div class="editor-lines-sidebar">
+                                    ${lineNumbersHtml}
+                                </div>
+                                <pre class="editor-code-pane"><code>${formattedCodeHtml}</code></pre>
+                            </div>
+                            <div class="editor-statusbar">
+                                <div class="status-left">
+                                    <span><i class="fas fa-code-branch"></i> main*</span>
+                                    <span><i class="fas fa-sync"></i> Synchronized</span>
+                                </div>
+                                <div class="status-right">
+                                    <span>Ln 1, Col 1</span>
+                                    <span>Spaces: 2</span>
+                                    <span>UTF-8</span>
+                                    <span>Dart</span>
+                                </div>
+                            </div>
+                        </div>`;
+                }
+
+                // Engineering Challenges Solved (Combat Cards Interface)
+                if (sec.title.includes("Challenges") && sec.bullets) {
+                    const challengeCards = sec.bullets.map(b => {
+                        const challengeMatch = b.match(/<strong>Challenge (.*?)<\/strong>:(.*?)<em>Solved by<\/em>(.*)/);
+                        
+                        if (challengeMatch) {
+                            const indexText = challengeMatch[1].trim();
+                            const challengeText = challengeMatch[2].trim();
+                            const solutionText = challengeMatch[3].trim();
+                            
+                            return `
+                                <div class="challenge-combat-card">
+                                    <div class="combat-side challenge-side">
+                                        <div class="combat-badge challenge"><i class="fas fa-exclamation-triangle"></i> Challenge ${indexText}</div>
+                                        <p>${challengeText}</p>
+                                    </div>
+                                    <div class="combat-side solution-side">
+                                        <div class="combat-badge solution"><i class="fas fa-check-circle"></i> Architectural Triumph</div>
+                                        <p>${solutionText}</p>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        
+                        return `<div class="standard-bullet-card">${b}</div>`;
+                    }).join('');
+                    
+                    bodyHtml = `
+                        <p class="section-paragraph">${sec.content}</p>
+                        <div class="combat-matrix">
+                            ${challengeCards}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <section class="premium-case-section">
+                        <div class="section-anchor-bar"></div>
+                        <h3 class="section-title-premium"><i class="${sec.icon}"></i> ${sec.title}</h3>
+                        <div class="section-content-wrapper">
+                            ${bodyHtml}
+                        </div>
+                    </section>`;
+            }).join('');
+
+            // Build Tech Stack Grid Block
+            if (cs.techStack) {
+                sectionsHtml += `
+                    <section class="premium-case-section tech-stack-section">
+                        <div class="section-anchor-bar"></div>
+                        <h3 class="section-title-premium"><i class="fas fa-laptop-code"></i> Engineering Tech Stack Matrix</h3>
+                        <div class="tech-matrix-grid">
+                            ${cs.techStack.map(ts => `
+                                <div class="tech-matrix-tag">
+                                    <span class="tech-tag-category">${ts.category}</span>
+                                    <span class="tech-tag-name">${ts.name}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+                `;
+            }
+
+            // Build mockup screenshot buttons & set the first file as active source directly
+            const firstScreenFile = cs.mockup.screens && cs.mockup.screens.length > 0 ? cs.mockup.screens[0].file : 'abdelrahman.png';
+            const screensHtml = cs.mockup.screens.map((screen, idx) => `
+                <button class="mockup-btn${idx === 0 ? ' active' : ''}" onclick="portfolioManager.changeScreenshot('${cs.mockup.projectKey}', '${screen.file}', this)">
+                    <i class="${screen.icon}"></i> ${screen.label}
+                </button>`).join('');
+
+            tab.innerHTML = `
+                <div class="markdown-preview">
+                    <div class="markdown-header">
+                        <span class="markdown-title"><i class="fab fa-markdown"></i> ${cs.fileName} (Preview)</span>
+                        <div class="markdown-actions">
+                            <button class="markdown-action-btn" onclick="portfolioManager.closeTab('${cs.tabId}')">
+                                <i class="fas fa-times"></i> Close
+                            </button>
+                        </div>
+                    </div>
+                    <div class="markdown-body">
+                        <div class="case-study-hero">
+                            <div class="hero-badge"><i class="fas fa-magic"></i> Production-Grade Case Study</div>
+                            <h1>${cs.hero.title}</h1>
+                            <p class="lead">${cs.hero.lead}</p>
+                        </div>
+                        <div class="case-study-grid">
+                            <div class="case-study-left">
+                                ${sectionsHtml}
+                            </div>
+                            <div class="case-study-right">
+                                <div class="mockup-container">
+                                    <h4>📱 Interactive Application Screens</h4>
+                                    <p class="mockup-hint">Click the buttons below the device to swap active screens!</p>
+                                    <div class="device-frame">
+                                        <div class="device-screen">
+                                            <img id="${cs.mockup.projectKey}-screen-img" src="${firstScreenFile}" alt="${cs.hero.title} Screen" class="app-screenshot" style="display: block;">
+                                            <div class="device-placeholder-overlay" id="${cs.mockup.projectKey}-placeholder" style="display: none; opacity: 0;">
+                                                <div class="overlay-content">
+                                                    <i class="fas fa-mobile-alt"></i>
+                                                    <span>Select a Screen Below</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="device-home-button"></div>
+                                    </div>
+                                    <div class="mockup-controls">
+                                        ${screensHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+            wrapper.appendChild(tab);
+        });
     }
 
     setupEventListeners() {
@@ -477,7 +946,10 @@ class PortfolioManager {
         if (!imgElement) return;
         
         // Hide the overlay by default
-        if (overlayElement) overlayElement.style.opacity = '0';
+        if (overlayElement) {
+            overlayElement.style.opacity = '0';
+            overlayElement.style.display = 'none';
+        }
         
         // Set source
         imgElement.src = imgFilename;
@@ -487,6 +959,9 @@ class PortfolioManager {
         imgElement.onerror = () => {
             imgElement.style.display = 'none';
             if (overlayElement) {
+                overlayElement.style.display = 'flex';
+                // Trigger reflow for transition
+                overlayElement.offsetHeight;
                 overlayElement.style.opacity = '1';
                 const span = overlayElement.querySelector('span');
                 if (span) span.textContent = `Replace with ${imgFilename}`;
