@@ -21,6 +21,21 @@ window.portfolioData = {
             caseStudyTab: "wratil-details"
         },
         {
+            date: "Dec 2025 - Feb 2026",
+            title: "Flutter Developer",
+            company: "Freelance Project — Hala Bakeries ERP",
+            companyUrl: "https://hala-markets.com/",
+            location: "Remote",
+            description: "Production-grade B2B ERP system automating multi-branch inventory control, employee operations, and sales auditing for a large bakery distribution network.",
+            bullets: [
+                "Built a modular Clean Architecture app with dual-role workflows (Admin / Employee) using Cubit for isolated state management per role.",
+                "Engineered RTL Arabic PDF & Excel export services with custom Cairo font rendering and right-to-left text shaping for corporate invoices and audits.",
+                "Developed a barcode-integrated stock audit engine (Sales = Opening + Received - Damaged - Actual) with mobile scanner support for real-time inventory reconciliation."
+            ],
+            tech: ["BLoC/Cubit", "Firebase Firestore", "GoRouter", "GetIt", "Mobile Scanner", "PDF & Excel Exports"],
+            caseStudyTab: null
+        },
+        {
             date: "Sep 2024 - Oct 2024",
             title: "Mobile Developer (Flutter Intern)",
             company: "Instant Software Solutions",
