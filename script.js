@@ -430,7 +430,10 @@ class PortfolioManager {
             skills: { icon: 'fas fa-code', label: 'skills.md' },
             projects: { icon: 'fas fa-folder-open', label: 'projects.md' },
             education: { icon: 'fas fa-graduation-cap', label: 'education.md' },
-            contact: { icon: 'fas fa-envelope', label: 'contact.md' }
+            contact: { icon: 'fas fa-envelope', label: 'contact.md' },
+            'jobizz-details': { icon: 'fab fa-markdown', label: 'jobizz_case_study.md' },
+            'wratil-details': { icon: 'fab fa-markdown', label: 'wratil_case_study.md' },
+            'cv-details': { icon: 'far fa-file-pdf', label: 'cv.pdf' }
         };
 
         const config = tabConfig[tabName];
@@ -465,6 +468,39 @@ class PortfolioManager {
         });
 
         tabBar.appendChild(tabElement);
+    }
+
+    changeScreenshot(project, imgFilename, button) {
+        const imgElement = document.getElementById(`${project}-screen-img`);
+        const overlayElement = document.getElementById(`${project}-placeholder`);
+        
+        if (!imgElement) return;
+        
+        // Hide the overlay by default
+        if (overlayElement) overlayElement.style.opacity = '0';
+        
+        // Set source
+        imgElement.src = imgFilename;
+        imgElement.style.display = 'block';
+        
+        // Handle loading error (if files don't exist yet, show fallback)
+        imgElement.onerror = () => {
+            imgElement.style.display = 'none';
+            if (overlayElement) {
+                overlayElement.style.opacity = '1';
+                const span = overlayElement.querySelector('span');
+                if (span) span.textContent = `Replace with ${imgFilename}`;
+            }
+        };
+        
+        // Update active class on buttons
+        const controls = button.parentNode;
+        if (controls) {
+            controls.querySelectorAll('.mockup-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+        button.classList.add('active');
     }
 
     switchToTab(tabName) {

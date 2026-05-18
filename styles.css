@@ -1061,52 +1061,177 @@ section li::before {
     font-weight: 500;
 }
 
-/* Languages Section */
+/* Premium Languages Section */
 .languages-section {
-    background-color: var(--bg-secondary);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 24px;
     margin-top: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.languages-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0, 122, 204, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.languages-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
 }
 
 .language-skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.language-card {
+    background: rgba(30, 30, 30, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
 }
 
-.language-item {
+[data-theme="light"] .language-card {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.language-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 12px 24px rgba(0, 122, 204, 0.15);
+    background: rgba(30, 30, 30, 0.4);
+}
+
+[data-theme="light"] .language-card:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.language-card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
+    align-items: flex-start;
+}
+
+.language-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .language-name {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
     color: var(--text-primary);
-    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-.language-level {
+.language-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.native-badge {
+    background-color: rgba(78, 201, 176, 0.1);
+    color: var(--success-color);
+    border: 1px solid rgba(78, 201, 176, 0.2);
+}
+
+.professional-badge {
+    background-color: rgba(0, 122, 204, 0.1);
+    color: var(--accent-blue);
+    border: 1px solid rgba(0, 122, 204, 0.2);
+}
+
+.language-icon-wrapper {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.language-card:hover .language-icon-wrapper {
+    transform: rotate(360deg) scale(1.1);
+    border-color: var(--accent-blue);
+}
+
+.language-proficiency-container {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
-.level-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+.proficiency-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
-.level-indicator.native {
-    background-color: var(--success-color);
+.proficiency-bar-track {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
 }
 
-.level-indicator.professional {
-    background-color: var(--accent-blue);
+.proficiency-bar {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.proficiency-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
 }
 
 /* Contact Grid */
@@ -2588,51 +2713,86 @@ section li::before {
 .git-timeline {
     position: relative;
     padding-left: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .git-branch {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 2px;
-    background: var(--accent-blue);
-    opacity: 0.5;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent-blue) 0%, var(--accent-green) 50%, var(--accent-orange) 100%);
+    box-shadow: 0 0 10px rgba(0, 122, 204, 0.2);
 }
 .git-commit {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     padding-left: 30px;
 }
 .commit-dot {
     position: absolute;
-    left: -24.5px;
+    left: -27.5px;
     top: 5px;
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
     background: var(--bg-primary);
-    border: 2px solid var(--accent-blue);
+    border: 3px solid var(--accent-blue);
     border-radius: 50%;
     z-index: 2;
+    box-shadow: 0 0 0 rgba(0, 122, 204, 0.4);
+    animation: pulseDot 2s infinite;
     transition: all 0.3s ease;
 }
+
+@keyframes pulseDot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 122, 204, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 122, 204, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 122, 204, 0);
+    }
+}
+
 .git-commit:hover .commit-dot {
     background: var(--accent-blue);
-    box-shadow: 0 0 10px var(--accent-blue);
+    box-shadow: 0 0 12px var(--accent-blue);
+    transform: scale(1.15);
 }
+
+.git-commit:nth-child(even) .commit-dot {
+    border-color: var(--accent-green);
+    animation-name: pulseDotGreen;
+}
+
+@keyframes pulseDotGreen {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(46, 204, 113, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+
 .commit-header {
     display: flex;
     gap: 15px;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 13px;
     font-family: 'Consolas', monospace;
 }
 .commit-hash {
     color: var(--accent-orange);
     background: rgba(206, 145, 120, 0.1);
-    padding: 2px 6px;
+    padding: 2px 8px;
     border-radius: 4px;
+    border: 1px solid rgba(206, 145, 120, 0.2);
 }
 .commit-date {
     color: var(--text-secondary);
@@ -2641,33 +2801,54 @@ section li::before {
     color: var(--text-primary);
     font-size: 20px;
     margin-bottom: 5px;
+    font-weight: 600;
 }
 .commit-message h4 {
     color: var(--text-secondary);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: normal;
     margin-bottom: 15px;
 }
 .commit-message h4 a {
     color: var(--accent-blue) !important;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 .commit-message h4 a:hover {
     text-decoration: underline;
+    color: var(--accent-green) !important;
 }
 .commit-details {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    padding: 15px;
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.6) 0%, rgba(20, 20, 20, 0.85) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-left: 4px solid var(--accent-blue);
+    padding: 20px;
     border-radius: 8px;
     font-family: inherit;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+.git-commit:nth-child(even) .commit-details {
+    border-left-color: var(--accent-green);
+}
+
+.git-commit:hover .commit-details {
+    transform: translateX(4px) translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 122, 204, 0.12);
+    border-color: rgba(255, 255, 255, 0.08);
+    border-left-width: 6px;
+}
+
 .commit-details p {
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    line-height: 1.6;
 }
 .commit-details ul {
     margin-bottom: 15px;
+    padding-left: 20px;
 }
 
 /* --- New Projects Dart Code Styles --- */
@@ -2720,44 +2901,53 @@ section li::before {
 .premium-projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    margin-top: 10px;
+    gap: 28px;
+    margin-top: 15px;
 }
 
 .premium-project-card {
     background: linear-gradient(145deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.04);
     border-radius: 12px;
-    padding: 24px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 26px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .premium-project-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-green) 50%, var(--accent-purple) 100%);
+    opacity: 0.6;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .premium-project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255,255,255,0.1);
+    transform: translateY(-8px);
+    border-color: rgba(0, 122, 204, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 122, 204, 0.12), 0 0 1px rgba(0, 122, 204, 0.4);
 }
 
 .premium-project-card:hover::before {
+    height: 6px;
     opacity: 1;
+    filter: drop-shadow(0 2px 8px var(--accent-blue));
 }
 
 .premium-project-card h3 {
     font-size: 20px;
     color: var(--text-primary);
     margin-bottom: 0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.premium-project-card:hover h3 {
+    color: var(--accent-blue);
 }
 
 .project-header {
@@ -2768,12 +2958,15 @@ section li::before {
 }
 
 .project-links a {
+    display: inline-block;
     color: var(--text-secondary);
     font-size: 18px;
-    transition: color 0.2s;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.2s ease;
     margin-left: 10px;
 }
+
 .project-links a:hover {
+    transform: scale(1.2) rotate(12deg);
     color: var(--accent-blue);
 }
 
@@ -2787,8 +2980,9 @@ section li::before {
 .badge {
     padding: 4px 10px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
+    letter-spacing: 0.2px;
 }
 
 .type-badge {
@@ -2808,6 +3002,30 @@ section li::before {
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: 'Consolas', monospace;
+    transition: all 0.25s ease;
+}
+
+.premium-project-card:hover .tech-tag {
+    border-color: rgba(0, 122, 204, 0.25);
+    background: rgba(0, 122, 204, 0.05);
+    color: var(--text-primary);
 }
 
 /* --- Mobile Top Menu Dropdown --- */
@@ -2867,4 +3085,551 @@ section li::before {
     .top-menu-btn {
         display: block;
     }
+}
+
+/* ==========================================================================
+   Premium Markdown Case Study Preview Section
+   ========================================================================== */
+.markdown-preview {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    color: var(--text-primary);
+}
+
+.markdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.markdown-title i {
+    color: var(--accent-blue);
+    margin-right: 6px;
+}
+
+.markdown-action-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.markdown-action-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--accent-blue);
+}
+
+.markdown-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    background-color: var(--bg-primary);
+    line-height: 1.7;
+}
+
+.case-study-hero {
+    margin-bottom: 35px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    background: linear-gradient(90deg, rgba(0, 122, 204, 0.05) 0%, transparent 100%);
+    padding-left: 15px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+.case-study-hero h1 {
+    font-size: 28px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.case-study-hero .lead {
+    font-size: 16px;
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.case-study-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.case-study-left section h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: var(--accent-blue);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+}
+
+.case-study-left section p {
+    margin-bottom: 12px;
+}
+
+.case-study-left section ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.case-study-left section li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.case-study-left section li::before {
+    content: '➔';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-size: 11px;
+    top: 2px;
+}
+
+/* Code Editor Window Mock */
+.code-editor-mock {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.editor-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.editor-dot.red { background-color: #ff5f57; }
+.editor-dot.yellow { background-color: #ffbd2e; }
+.editor-dot.green { background-color: #28ca42; }
+
+.editor-filename {
+    margin-left: 10px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-family: inherit;
+}
+
+.code-editor-mock pre {
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 13px;
+    color: var(--accent-orange);
+}
+
+.code-editor-mock code {
+    font-family: inherit;
+}
+
+/* Sidebar & Mobile Mockup Frame */
+.mockup-container {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.mockup-container h4 {
+    color: var(--text-primary);
+    font-size: 16px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.mockup-hint {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* iPhone Device Wrapper CSS */
+.device-frame {
+    width: 240px;
+    height: 480px;
+    border: 12px solid #222222;
+    border-radius: 36px;
+    background-color: #000000;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4),
+                inset 0 0 4px rgba(255, 255, 255, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.device-frame:hover {
+    transform: scale(1.02) rotate(1deg);
+}
+
+/* Screen area */
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Hidden until loaded successfully */
+    animation: fadeIn 0.4s ease;
+}
+
+/* Missing screenshot elegant placeholder overlay */
+.device-placeholder-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 30, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-secondary);
+}
+
+.overlay-content i {
+    font-size: 48px;
+    color: var(--accent-blue);
+    animation: pulse 2s infinite;
+}
+
+.overlay-content span {
+    font-size: 11px;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    word-break: break-all;
+}
+
+.device-home-button {
+    width: 50px;
+    height: 4px;
+    background-color: #333333;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Dynamic Island/Notch */
+.device-frame::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 18px;
+    background-color: #000000;
+    border-radius: 10px;
+    z-index: 20;
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Interactive Device Buttons Controls */
+.mockup-controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+.mockup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    font-size: 11px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    min-height: 38px;
+}
+
+.mockup-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--accent-blue);
+}
+
+.mockup-btn.active {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+    border-color: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 122, 204, 0.25);
+}
+
+/* Responsive adjustment */
+@media (max-width: 991px) {
+    .case-study-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mockup-container {
+        position: relative;
+        top: auto;
+    }
+}
+
+/* ==========================================================================
+   Syntax Highlighting & Ambient Glow UI Upgrades
+   ========================================================================== */
+
+/* 1. Code Syntax Highlighting Rules */
+.code-editor-mock pre {
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #abb2bf !important; /* Neutral light text - VS Code style */
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    background-color: var(--bg-secondary);
+}
+
+.syntax-keyword { color: #c678dd !important; font-weight: bold; } /* Purple */
+.syntax-type { color: #e5c07b !important; } /* Yellow-ish Type */
+.syntax-string { color: #98c379 !important; } /* Green Literal */
+.syntax-annotation { color: #5c6370 !important; font-style: italic; } /* Gray Override */
+.syntax-comment { color: #5c6370 !important; font-style: italic; } /* Gray Comments */
+.syntax-function { color: #61afef !important; } /* Blue Method */
+.syntax-variable { color: #e06c75 !important; } /* Reddish-orange Variable */
+
+/* 2. Dynamic Ambient Glow behind Device Mockups */
+.mockup-container {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.device-frame {
+    position: relative;
+    z-index: 3;
+}
+
+/* Pulsing backdrop glow matching project brand colors */
+.mockup-container::before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 480px;
+    background: radial-gradient(circle, var(--project-glow, rgba(0, 122, 204, 0.25)) 0%, transparent 70%);
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 50%;
+    animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.9);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+        filter: blur(25px);
+    }
+}
+
+/* 3. Smooth Sidebar File Explorer Micro-Interactions */
+.file-item {
+    position: relative;
+    padding-left: 20px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    border-left: 3px solid transparent;
+}
+
+.file-item:hover {
+    padding-left: 25px !important;
+    background-color: var(--bg-hover) !important;
+    color: var(--text-primary) !important;
+    border-left-color: var(--accent-blue);
+}
+
+.file-item:hover i {
+    transform: scale(1.2) rotate(8deg);
+    color: var(--accent-blue) !important;
+}
+
+.file-item.active {
+    border-left-color: var(--accent-green);
+    background-color: var(--bg-active) !important;
+    color: var(--text-primary) !important;
+}
+
+.file-item i {
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.25s ease;
+}
+
+/* ==========================================================================
+   Inside Editor PDF CV Viewer & Interactive Paper Sheet
+   ========================================================================== */
+.pdf-preview-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.pdf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    font-family: 'Consolas', monospace;
+}
+
+.pdf-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+.pdf-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pdf-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+    border: none;
+    color: white !important;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 122, 204, 0.2);
+}
+
+.pdf-download-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0, 122, 204, 0.35);
+}
+
+.pdf-action-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.pdf-action-close:hover {
+    background-color: rgba(255, 95, 87, 0.2);
+    color: #ff5f57;
+}
+
+.pdf-body {
+    flex-grow: 1;
+    position: relative;
+    background: #333639; /* Default PDF viewer dark grey background */
+    padding: 0; /* No padding to let the iframe fill 100% space! */
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Hide outer scrollbar to avoid double scrollbars */
+    min-height: 500px;
+}
+
+/* Real PDF Iframe Viewer inside VS Code Workspace */
+.pdf-iframe {
+    width: 100%;
+    height: calc(100vh - 145px); /* Perfectly fills the remaining vertical editor space */
+    border: none;
+    background-color: #333639;
 }
