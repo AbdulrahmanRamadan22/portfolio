@@ -71,15 +71,15 @@ window.portfolioData = {
             tech: ["Flutter", "Bloc", "Firebase", "Localization"],
             caseStudyTab: null
         },
-        {
-            title: "Hospital Management App",
-            githubUrl: "https://github.com/AbdulrahmanRamadan22/hospital",
-            type: "Mobile App",
-            date: "Sep 2024 - Oct 2024",
-            description: "Digital system for patient records and hospital operations via API integration with intuitive dashboards.",
-            tech: ["Flutter", "Dio", "SQLite"],
-            caseStudyTab: null
-        },
+        // {
+        //     title: "Hospital Management App",
+        //     githubUrl: "https://github.com/AbdulrahmanRamadan22/hospital",
+        //     type: "Mobile App",
+        //     date: "Sep 2024 - Oct 2024",
+        //     description: "Digital system for patient records and hospital operations via API integration with intuitive dashboards.",
+        //     tech: ["Flutter", "Dio", "SQLite"],
+        //     caseStudyTab: null
+        // },
         // {
         //     title: "Chat-App",
         //     githubUrl: "https://github.com/AbdulrahmanRamadan22/chat_app",
@@ -386,6 +386,8 @@ window.portfolioData = {
                 "screens": [
                     { "label": "Onboarding", "icon": "fas fa-star", "file": "jobizz_screen/onboarding1.png" },
                     { "label": "Secure Login", "icon": "fas fa-sign-in-alt", "file": "jobizz_screen/login.png" },
+                    { "label": "Registration", "icon": "fas fa-user-plus", "file": "jobizz_screen/register.png" },
+                    { "label": "Reset Password", "icon": "fas fa-key", "file": "jobizz_screen/reset_password.png" },
                     { "label": "OTP Verification", "icon": "fas fa-key", "file": "jobizz_screen/otp.png" },
                     { "label": "Home Dashboard", "icon": "fas fa-home", "file": "jobizz_screen/home.png" },
                     { "label": "Company Details", "icon": "fas fa-building", "file": "jobizz_screen/company_profile.png" },
@@ -393,6 +395,7 @@ window.portfolioData = {
                     { "label": "Advanced Filters", "icon": "fas fa-filter", "file": "jobizz_screen/search_filter.png" },
                     { "label": "Job Insights", "icon": "fas fa-info-circle", "file": "jobizz_screen/job_detail.png" },
                     { "label": "Apply Flow", "icon": "fas fa-paper-plane", "file": "jobizz_screen/apply.png" },
+                    { "label": "Application Tracking", "icon": "fas fa-calendar-check", "file": "jobizz_screen/application_tracking.png" },
                     { "label": "Portfolio Manager", "icon": "fas fa-briefcase", "file": "jobizz_screen/portfolio_uploaded.png" },
                     { "label": "User Profile", "icon": "fas fa-user", "file": "jobizz_screen/profile.png" }
                 ]
