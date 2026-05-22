@@ -150,7 +150,7 @@ window.portfolioData = {
     education: [
         {
             period: "Sep 2021 - Jul 2025",
-            degree: "Bachelor of Science in Computer Science",
+            degree: "Bachelor of Computer Science",
             institution: "Higher Technological Institute, Beni Suef",
             description: "Overall Grade: Excellent (85%)"
         },
