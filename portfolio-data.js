@@ -36,21 +36,35 @@ window.portfolioData = {
             caseStudyTab: "hala-bakeries-details"
         },
         {
-            date: "Sep 2024 - Oct 2024",
-            title: "Mobile Developer (Flutter Intern)",
-            company: "Instant Software Solutions",
-            companyUrl: "https://instanteg.com/",
-            location: "Cairo, Egypt (Remote)",
-            description: "",
+            date: "Sep 2025 - Nov 2025",
+            title: "Flutter Developer (Part-Time)",
+            company: "Freelance Project — Fluoro Master",
+            companyUrl: "",
+            location: "Remote",
+            description: "A comprehensive medical utility and educational ecosystem for radiology and fluoroscopy, featuring detailed procedure guides, dose calculators, interactive simulators, and an AI-powered advisory system.",
             bullets: [
-                "Developed responsive, user-friendly interfaces following modern UI/UX principles, improving user engagement by 25%.",
-                "Integrated REST APIs with Retrofit/Dio, ensuring seamless data flow and offline functionality using SQLite/SharedPreferences.",
-                "Debugged and resolved 15+ critical issues, reducing app crashes by 30% and enhancing stability.",
-                "Implemented Clean Architecture, reducing code redundancy by 40% and improving maintainability."
+                "Built a comprehensive medical procedures library with safety checklists, educational quizzes, and interactive simulators.",
+                "Secured API communication using Retrofit/Dio interceptors to synchronize medical data and user progress, alongside encrypted local caching."
             ],
-            tech: ["Flutter", "Dart", "REST APIs", "Clean Architecture", "Local Storage", "Git"],
-            caseStudyTab: null
-        }
+            tech: ["BLoC", "Clean Architecture", "Retrofit/Dio", "GetIt (DI)", "Flutter Animate", "Local Storage"],
+            caseStudyTab: "fluoro-details"
+        },
+        // {
+        //     date: "Sep 2024 - Oct 2024",
+        //     title: "Mobile Developer (Flutter Intern)",
+        //     company: "Instant Software Solutions",
+        //     companyUrl: "https://instanteg.com/",
+        //     location: "Cairo, Egypt (Remote)",
+        //     description: "",
+        //     bullets: [
+        //         "Developed responsive, user-friendly interfaces following modern UI/UX principles, improving user engagement by 25%.",
+        //         "Integrated REST APIs with Retrofit/Dio, ensuring seamless data flow and offline functionality using SQLite/SharedPreferences.",
+        //         "Debugged and resolved 15+ critical issues, reducing app crashes by 30% and enhancing stability.",
+        //         "Implemented Clean Architecture, reducing code redundancy by 40% and improving maintainability."
+        //     ],
+        //     tech: ["Flutter", "Dart", "REST APIs", "Clean Architecture", "Local Storage", "Git"],
+        //     caseStudyTab: null
+        // }
     ],
     projects: [
         {
@@ -921,6 +935,130 @@ window.portfolioData = {
                     { "label": "Order Details", "icon": "fas fa-box", "file": "ecommerce_screen/order_detail.png" },
                     { "label": "Admin Dashboard", "icon": "fas fa-user-shield", "file": "ecommerce_screen/admin_home.png" },
                     { "label": "User Profile", "icon": "fas fa-user", "file": "ecommerce_screen/profile.png" }
+                ]
+            }
+        },
+
+        {
+            "tabId": "fluoro-details",
+            "glowColor": "rgba(0, 188, 212, 0.25)",
+            "fileName": "fluoro_master_case_study.md",
+
+            "hero": {
+                "title": "Fluoro Master — Medical Radiology & Fluoroscopy Ecosystem",
+                "lead": "A comprehensive medical utility and educational platform for radiology professionals and students, delivering detailed fluoroscopy procedure guides, dose calculators, interactive safety checklists, clinical quizzes, and an AI-powered advisory system — built with Clean Architecture and BLoC state management."
+            },
+
+            "sections": [
+                {
+                    "icon": "fas fa-bullseye",
+                    "title": "Executive Summary",
+                    "content": "Radiology professionals and students face a critical lack of accessible, structured clinical references during procedures. Fluoro Master bridges this gap by providing an all-in-one digital companion that covers procedural protocols, radiation safety, dose monitoring, and continuous clinical education — available on-device without requiring constant connectivity.",
+                    "bullets": [
+                        "<strong>Target Audience:</strong> Radiologists, fluoroscopy technologists, radiology residents, and medical students seeking on-the-job clinical guidance and structured learning.",
+                        "<strong>Core Solution:</strong> A unified platform combining a detailed procedures library, real-time dose calculators, interactive safety simulators, AI-assisted advisory, and a gamified quiz engine.",
+                        "<strong>Scale:</strong> Architected on Clean Architecture with feature-first organization and BLoC state management, ensuring robust scalability and seamless offline access to all clinical content."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-layer-group",
+                    "title": "Architecture & Engineering Decisions",
+                    "content": "Fluoro Master employs a <strong>Feature-First Clean Architecture</strong>, clearly separating the Presentation, Domain, and Data layers for every feature module. This ensures high testability and a maintainable, extensible codebase as the medical content library grows.",
+                    "bullets": [
+                        "<strong>BLoC Pattern:</strong> Manages all complex state transitions — from procedure loading to quiz scoring and AI response streaming — providing explicit, testable, and side-effect-free UI updates.",
+                        "<strong>GetIt (Service Locator):</strong> Centralizes all dependency injection across data sources, repositories, and business logic classes, enabling seamless decoupling and painless unit testing.",
+                        "<strong>Retrofit & Dio:</strong> Powers the API communication layer with auto-generated type-safe clients, token-injection interceptors, and structured logging for synchronizing medical data and user progress.",
+                        "<strong>Flutter Animate:</strong> Provides smooth, performant micro-animations across all screens, ensuring a premium and engaging user experience without impacting rendering performance.",
+                        "<strong>Local Storage:</strong> Critical clinical content and user progress are encrypted and cached locally, guaranteeing full offline access — essential in clinical environments with unreliable connectivity."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-book-medical",
+                    "title": "Comprehensive Medical Procedures Library",
+                    "content": "The core of Fluoro Master is its structured clinical procedures database, designed to serve as an authoritative on-the-go reference for fluoroscopy professionals.",
+                    "bullets": [
+                        "<strong>Detailed Procedure Guides:</strong> Step-by-step procedural protocols for a wide range of fluoroscopy examinations, including patient positioning, equipment setup, contrast media protocols, and imaging parameters.",
+                        "<strong>Safety Checklists:</strong> Interactive pre-procedure checklists ensuring compliance with radiation protection standards and patient safety protocols before every clinical session.",
+                        "<strong>Dose Reference Cards:</strong> Quick-access radiation dose reference values and calculators for common fluoroscopy procedures, helping professionals minimize patient exposure.",
+                        "<strong>References & Evidence Base:</strong> Integrated reference lists linking each procedure to its peer-reviewed clinical guidelines and radiological society standards."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-brain",
+                    "title": "AI-Powered Advisory System",
+                    "content": "To support real-time clinical decision-making, Fluoro Master integrates an intelligent advisory engine powered by a large language model backend.",
+                    "bullets": [
+                        "<strong>Clinical Q&A:</strong> Users can query the AI assistant with clinical questions regarding procedures, contraindications, dose thresholds, and equipment settings, receiving evidence-based responses instantly.",
+                        "<strong>Contextual Awareness:</strong> The advisory system is contextually aware of the currently viewed procedure, offering targeted guidance without requiring users to re-explain their clinical scenario.",
+                        "<strong>Secure API Layer:</strong> AI requests are routed through Retrofit/Dio interceptors with authentication, ensuring all communication with the backend medical AI service is fully secured and logged."
+                    ],
+                    "isCode": true,
+                    "codeFile": "procedure_cubit.dart",
+                    "code": "<span class=\"syntax-type\">Future</span>&lt;<span class=\"syntax-type\">void</span>&gt; <span class=\"syntax-function\">loadProcedureDetails</span>(<span class=\"syntax-type\">String</span> procedureId) <span class=\"syntax-keyword\">async</span> {\n  <span class=\"syntax-function\">emit</span>(<span class=\"syntax-keyword\">const</span> <span class=\"syntax-type\">ProcedureState</span>.loading());\n\n  <span class=\"syntax-keyword\">final</span> result = <span class=\"syntax-keyword\">await</span> _procedureRepo.<span class=\"syntax-function\">getProcedureById</span>(procedureId);\n\n  result.<span class=\"syntax-function\">when</span>(\n    success: (procedure) {\n      <span class=\"syntax-function\">emit</span>(<span class=\"syntax-type\">ProcedureState</span>.loaded(procedure));\n    },\n    failure: (error) {\n      <span class=\"syntax-function\">emit</span>(<span class=\"syntax-type\">ProcedureState</span>.error(error.apiErrorModel.message ?? <span class=\"syntax-string\">''</span>));\n    },\n  );\n}"
+                },
+
+                {
+                    "icon": "fas fa-graduation-cap",
+                    "title": "Interactive Quiz & Education Engine",
+                    "content": "To support continuous medical education, Fluoro Master features a structured quiz system covering key fluoroscopy knowledge domains.",
+                    "bullets": [
+                        "<strong>Topic-Based Quizzes:</strong> Quizzes are organized by clinical topics — radiation physics, equipment parameters, contrast protocols, and patient safety — allowing targeted knowledge assessment.",
+                        "<strong>Scored Sessions:</strong> Each quiz session tracks scores, correct/incorrect answers, and time taken, providing users with an accurate picture of their knowledge gaps.",
+                        "<strong>Progress Persistence:</strong> Quiz history and scores are persisted locally using encrypted storage, enabling users to track their learning progress over time without requiring an account."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-calculator",
+                    "title": "Clinical Dose Calculators & Simulators",
+                    "content": "Radiation dose management is a critical safety concern in fluoroscopy. Fluoro Master provides built-in calculators to assist professionals in making informed dose decisions.",
+                    "bullets": [
+                        "<strong>Dose Area Product (DAP) Calculator:</strong> Computes patient radiation dose metrics based on input imaging parameters, aiding in compliance with ALARA principles.",
+                        "<strong>Interactive Simulators:</strong> Step-through clinical scenario simulators allow users to practice procedure decision-making in a safe, risk-free digital environment.",
+                        "<strong>Reference Value Comparisons:</strong> Calculated doses are automatically benchmarked against standard diagnostic reference levels (DRLs) to flag potential overexposure."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-fire",
+                    "title": "Engineering Challenges Solved",
+                    "content": "Building a medically accurate, offline-capable, and AI-integrated platform presented unique engineering challenges.",
+                    "bullets": [
+                        "<strong>Challenge 1 — Offline-First Clinical Data:</strong> Medical professionals often work in signal-poor clinical environments. <em>Solved by</em> implementing an offline-first data layer that caches all procedure content and user progress locally using encrypted storage, syncing transparently with the remote API when connectivity is restored.",
+                        "<strong>Challenge 2 — Complex Nested State Management:</strong> Procedure detail screens contain multiple independent sub-states (checklist completion, dose calculations, AI responses). <em>Solved by</em> scoping dedicated Cubits to each functional sub-section, keeping state isolated and preventing unintentional UI rebuilds across the entire screen.",
+                        "<strong>Challenge 3 — Secure Medical Data API:</strong> Medical data APIs require strict authentication and tamper-proof communication. <em>Solved by</em> implementing Dio interceptors for automatic token injection and response integrity verification, combined with Flutter Secure Storage for encrypted credential persistence."
+                    ]
+                }
+            ],
+
+            "techStack": [
+                { "name": "Flutter", "category": "Framework" },
+                { "name": "Dart", "category": "Language" },
+                { "name": "BLoC", "category": "State Management" },
+                { "name": "Clean Architecture", "category": "Architecture" },
+                { "name": "GetIt", "category": "Dependency Injection" },
+                { "name": "Retrofit", "category": "API Layer" },
+                { "name": "Dio", "category": "Networking" },
+                { "name": "Flutter Animate", "category": "Animations" },
+                { "name": "Local Storage", "category": "Offline Cache" },
+                { "name": "Secure Storage", "category": "Encrypted Storage" }
+            ],
+
+            "mockup": {
+                "projectKey": "fluoro",
+                "screens": [
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "fluoro_screen/onboarding.png" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "fluoro_screen/home.png" },
+                    { "label": "Procedures Library", "icon": "fas fa-book-medical", "file": "fluoro_screen/procedures.png" },
+                    { "label": "Procedure Detail", "icon": "fas fa-file-medical", "file": "fluoro_screen/procedure_detail.png" },
+                    { "label": "Safety Checklist", "icon": "fas fa-clipboard-check", "file": "fluoro_screen/checklist.png" },
+                    { "label": "Dose Calculator", "icon": "fas fa-calculator", "file": "fluoro_screen/calculator.png" },
+                    { "label": "Quiz Screen", "icon": "fas fa-graduation-cap", "file": "fluoro_screen/quiz.png" },
+                    { "label": "AI Advisory", "icon": "fas fa-brain", "file": "fluoro_screen/ai_advisory.png" },
+                    { "label": "References", "icon": "fas fa-list-alt", "file": "fluoro_screen/references.png" }
                 ]
             }
         }
