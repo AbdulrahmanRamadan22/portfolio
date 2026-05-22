@@ -142,9 +142,16 @@ class PortfolioManager {
                     <div class="commit-message">
                         <h3>${exp.title}</h3>
                         <h4>
-                            <a href="${exp.companyUrl}" target="_blank">${exp.company}
-                                <i class="fas fa-external-link-alt" style="font-size:0.8em;"></i>
-                            </a>${exp.location ? ` - ${exp.location}` : ''}
+                            ${exp.companyUrl
+                                ? `<a href="${exp.companyUrl}" target="_blank">${exp.company}
+                                    <i class="fas fa-external-link-alt" style="font-size:0.8em;"></i>
+                                   </a>`
+                                : exp.caseStudyTab
+                                    ? `<a href="#" onclick="event.preventDefault(); portfolioManager.openTab('${exp.caseStudyTab}')" style="cursor:pointer;">${exp.company}
+                                        <i class="fab fa-markdown" style="font-size:0.8em;" title="View Case Study"></i>
+                                       </a>`
+                                    : `<span>${exp.company}</span>`
+                            }${exp.location ? ` - ${exp.location}` : ''}
                         </h4>
                     </div>
                     <div class="commit-details">
