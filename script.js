@@ -80,7 +80,19 @@ class PortfolioManager {
         this.setupEventListeners();
         this.setupKeyboardShortcuts();
         this.setupDragAndDrop();
-        this.showWelcomePage();
+        
+        // Handle Deep Linking
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialTab = urlParams.get('tab') || window.location.hash.substring(1);
+        
+        if (initialTab) {
+            // Delay slightly to ensure rendering is complete
+            setTimeout(() => {
+                this.openTab(initialTab);
+            }, 100);
+        } else {
+            this.showWelcomePage();
+        }
 
         // Show main container after loading
         setTimeout(() => {
@@ -596,6 +608,17 @@ class PortfolioManager {
         
         // Mobile floating menu
         this.setupMobileFloatingMenu();
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tabParam = urlParams.get('tab') || window.location.hash.substring(1);
+            if (tabParam) {
+                this.switchToTab(tabParam);
+            } else {
+                this.showWelcomePage();
+            }
+        });
     }
 
     setupMobileFloatingMenu() {
@@ -878,6 +901,9 @@ class PortfolioManager {
 
         // If no tabs left, show welcome page
         if (this.openTabs.length === 0) {
+            if (history.pushState) {
+                history.pushState(null, null, window.location.pathname);
+            }
             this.showWelcomePage();
             return;
         }
@@ -900,10 +926,15 @@ class PortfolioManager {
             projects: { icon: 'fas fa-folder-open', label: 'projects.md' },
             education: { icon: 'fas fa-graduation-cap', label: 'education.md' },
             contact: { icon: 'fas fa-envelope', label: 'contact.md' },
-            'jobizz-details': { icon: 'fab fa-markdown', label: 'jobizz_case_study.md' },
-            'wratil-details': { icon: 'fab fa-markdown', label: 'wratil_case_study.md' },
             'cv-details': { icon: 'far fa-file-pdf', label: 'cv.pdf' }
         };
+
+        // Dynamically add case studies to tabConfig
+        if (window.portfolioData && window.portfolioData.caseStudies) {
+            window.portfolioData.caseStudies.forEach(cs => {
+                tabConfig[cs.tabId] = { icon: 'fab fa-markdown', label: cs.fileName };
+            });
+        }
 
         const config = tabConfig[tabName];
         if (!config) return;
@@ -985,6 +1016,12 @@ class PortfolioManager {
         }
 
         this.activeTab = tabName;
+        
+        // Deep linking: Update URL when a tab is switched
+        if (history.pushState) {
+            history.pushState(null, null, '?tab=' + tabName);
+        }
+
         this.updateFileExplorerStates();
         this.updateTabBarStates();
         this.updateContentStates();

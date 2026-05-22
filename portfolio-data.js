@@ -69,7 +69,7 @@ window.portfolioData = {
             date: "Nov 2024 - Feb 2025",
             description: "Mobile app providing home services (electrical, plumbing, carpentry) with subscription options and multiple payment methods.",
             tech: ["Flutter", "Bloc", "Firebase", "Localization"],
-            caseStudyTab: null
+            caseStudyTab: "homeease-details"
         },
         // {
         //     title: "Hospital Management App",
@@ -114,7 +114,7 @@ window.portfolioData = {
             date: "Sep 2023 - Feb 2024",
             description: "Mobile storefront with product listings, cart, delivery tracking, secure authentication, and Google Maps integration.",
             tech: ["Flutter", "GetX", "Firebase", "Google Maps"],
-            caseStudyTab: null
+            caseStudyTab: "ecommerce-details"
         }
     ],
     skills: [
@@ -670,6 +670,257 @@ window.portfolioData = {
                     { "label": "Daily Inventory", "icon": "fas fa-boxes", "file": "hala_bakeries_screen/daily_inventory.png" },
 
 
+                ]
+            }
+        },
+
+        {
+            "tabId": "homeease-details",
+            "glowColor": "rgba(41, 128, 185, 0.25)",
+            "fileName": "homeease_case_study.md",
+
+            "hero": {
+                "title": "HomeEase — Modern On-Demand Home Services Platform",
+                "lead": "A robust, multi-lingual Flutter mobile application utilizing Feature-First Architecture and BLoC state management to deliver seamless home service booking, professional discovery, secure payments, digital wallet management, and real-time order tracking."
+            },
+
+            "sections": [
+                {
+                    "icon": "fas fa-home",
+                    "title": "Executive Summary",
+                    "content": "Finding reliable home services often involves navigating fragmented platforms with poor communication and no standardized pricing. HomeEase unifies the entire process, offering a centralized hub where users can discover categories, browse trusted companies, book specific services, manage multiple addresses, and handle payments securely through an integrated wallet.",
+                    "bullets": [
+                        "<strong>Target Audience:</strong> Homeowners and tenants seeking reliable, fast, and verified home maintenance and improvement services.",
+                        "<strong>Core Solution:</strong> An end-to-end mobile platform integrating service discovery, smart address management, multi-lingual support, and digital wallet integration.",
+                        "<strong>Scale:</strong> Developed using a modular feature-first architecture, robust dependency injection, and scalable state management to support a growing user and service provider base."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-layer-group",
+                    "title": "Architecture & Engineering Decisions",
+                    "content": "HomeEase employs a strictly modular, feature-based <strong>Clean Architecture</strong> approach, organizing the codebase by domain features (Auth, Home, Services, Payment, etc.) to ensure high maintainability and testability.",
+                    "bullets": [
+                        "<strong>Cubit (BLoC):</strong> Manages state predictably across all features. Used for clean separation of UI from business logic, ensuring reactive, side-effect-free updates.",
+                        "<strong>GetIt (Service Locator):</strong> Centralizes dependency injection for all API clients, repositories, and logic classes, enabling seamless decoupling and testing.",
+                        "<strong>Retrofit & Dio:</strong> Powers the networking layer. Retrofit autogenerates type-safe API clients, while Dio handles advanced interceptors, logging, and timeouts.",
+                        "<strong>Freezed Serialization:</strong> Utilized across API responses and states to generate immutable models, union types (e.g., success/failure states), and deep copy functions, minimizing runtime errors.",
+                        "<strong>CacheHelper:</strong> A centralized wrapper around SharedPreferences for secure and rapid access to user tokens, selected language, and onboarding states."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-cogs",
+                    "title": "Core State Management & Auth Flow",
+                    "content": "The application relies on Freezed-generated union states and Cubits to handle asynchronous API calls elegantly, avoiding boilerplate try-catch blocks in the UI layer and providing strict compile-time safety.",
+                    "bullets": [
+                        "<strong>Patterned API Handling:</strong> API responses are wrapped in generic success/failure states for predictable UI reactions.",
+                        "<strong>Token Management:</strong> Securely caching authentication tokens upon successful login to dictate initial routing seamlessly.",
+                        "<strong>UI Separation:</strong> Text controllers (Phone, Password) and form keys are isolated in the Cubit, keeping UI components strictly declarative."
+                    ],
+                    "isCode": true,
+                    "codeFile": "login_cubit.dart",
+                    "code": "<span class=\"syntax-type\">Future</span>&lt;<span class=\"syntax-type\">void</span>&gt; <span class=\"syntax-function\">emitLoginAuthStates</span>() <span class=\"syntax-keyword\">async</span> {\n  <span class=\"syntax-function\">emit</span>(<span class=\"syntax-keyword\">const</span> <span class=\"syntax-type\">LoginState</span>.loading());\n\n  <span class=\"syntax-keyword\">final</span> response = <span class=\"syntax-keyword\">await</span> _loginRepo.<span class=\"syntax-function\">login</span>(<span class=\"syntax-type\">LoginRequestBody</span>(\n      password: passwordController.text,\n      phone: phoneController.text));\n\n  response.<span class=\"syntax-function\">when</span>(success: (loginResponse) {\n    <span class=\"syntax-type\">CacheHelper</span>.<span class=\"syntax-function\">saveData</span>(key:<span class=\"syntax-string\">'token'</span>, value: loginResponse.token.<span class=\"syntax-function\">toString</span>());\n    <span class=\"syntax-function\">emit</span>(<span class=\"syntax-type\">LoginState</span>.loginSuccess(loginResponse));\n  }, failure: (error) {\n    <span class=\"syntax-function\">emit</span>(<span class=\"syntax-type\">LoginState</span>.error(error: error.apiErrorModel.message ?? <span class=\"syntax-string\">''</span>));\n  });\n}"
+                },
+
+                {
+                    "icon": "fas fa-map-marked-alt",
+                    "title": "Smart Location & Address Management",
+                    "content": "Accurate service delivery requires robust address handling. The platform allows users to seamlessly manage their locations and link them to specific service orders.",
+                    "bullets": [
+                        "<strong>Address Selection:</strong> Dedicated flows for adding, selecting, and modifying user service locations.",
+                        "<strong>Order Integration:</strong> Binds the user's active address directly to their checkout cart to ensure accurate service provider dispatching."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-wallet",
+                    "title": "Integrated Wallet & Checkout Flow",
+                    "content": "To facilitate smooth transactions and increase user loyalty, HomeEase incorporates a digital wallet alongside a comprehensive payment checkout system.",
+                    "bullets": [
+                        "<strong>My Wallet:</strong> Users can track their current balance, view past transactions, and use wallet funds seamlessly for service payments.",
+                        "<strong>Multi-Step Checkout:</strong> Structured order detail flows linking selected services, time slots, and flexible payment methods."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-language",
+                    "title": "Dynamic Localization & UI Polish",
+                    "content": "Built for a diverse user base, the app supports full dynamic localization and pixel-perfect responsive UI scaling.",
+                    "bullets": [
+                        "<strong>Easy Localization:</strong> Real-time toggling between English and Arabic (including full RTL layout support) without requiring app restarts.",
+                        "<strong>Responsive Scaling:</strong> flutter_screenutil ensures consistent layouts, typography, and padding across all device form factors.",
+                        "<strong>Interactive Feedback:</strong> Integrated smooth page indicators for onboarding and native SVG rendering (flutter_svg) for crisp iconography at any resolution."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-route",
+                    "title": "Intelligent Routing & Session Management",
+                    "content": "Ensuring users land exactly on the right screen based on their authentication and onboarding history.",
+                    "bullets": [
+                        "<strong>Initial Route Evaluation:</strong> The app dynamically calculates the starting screen at launch—checking for language preferences, onboarding completion, and valid cached session tokens.",
+                        "<strong>Centralized AppRouter:</strong> All screen transitions are managed through a centralized routing system, keeping complex navigation logic entirely out of UI widgets."
+                    ]
+                }
+            ],
+
+            "techStack": [
+                { "name": "Flutter", "category": "Framework" },
+                { "name": "Dart", "category": "Language" },
+                { "name": "Cubit / BLoC", "category": "State Management" },
+                { "name": "GetIt", "category": "Dependency Injection" },
+                { "name": "Dio", "category": "Networking" },
+                { "name": "Retrofit", "category": "API Layer" },
+                { "name": "Freezed", "category": "Serialization" },
+                { "name": "Easy Localization", "category": "Internationalization" },
+                { "name": "ScreenUtil", "category": "Responsive Design" },
+                { "name": "Shared Preferences", "category": "Local Cache" },
+                { "name": "Pinput", "category": "OTP Input" },
+                { "name": "Image Picker", "category": "Media Selection" }
+            ],
+
+            "mockup": {
+                "projectKey": "homeease",
+                "screens": [
+                    { "label": "Language Selection", "icon": "fas fa-language", "file": "homeease_screen/select_language.png" },
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "homeease_screen/onboarding.png" },
+                    { "label": "User Login", "icon": "fas fa-sign-in-alt", "file": "homeease_screen/login.png" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "homeease_screen/home.png" },
+                    { "label": "Service Categories", "icon": "fas fa-th-large", "file": "homeease_screen/categories.png" },
+                    { "label": "Company Profiles", "icon": "fas fa-building", "file": "homeease_screen/companies.png" },
+                    { "label": "Service Details", "icon": "fas fa-tools", "file": "homeease_screen/service.png" },
+                    { "label": "Address Management", "icon": "fas fa-map-marker-alt", "file": "homeease_screen/address.png" },
+                    { "label": "Order Details", "icon": "fas fa-receipt", "file": "homeease_screen/orderdetalis.png" },
+                    { "label": "My Wallet", "icon": "fas fa-wallet", "file": "homeease_screen/mywallet.png" },
+                    { "label": "Order History", "icon": "fas fa-history", "file": "homeease_screen/history.png" },
+                    { "label": "User Profile", "icon": "fas fa-user", "file": "homeease_screen/profile.png" }
+                ]
+            }
+        },
+
+        {
+            "tabId": "ecommerce-details",
+            "glowColor": "rgba(242, 114, 53, 0.25)",
+            "fileName": "ecommerce_case_study.md",
+
+            "hero": {
+                "title": "StoreApp — Advanced Multi-Role E-Commerce Platform",
+                "lead": "A full-scale, production-ready Flutter e-commerce application leveraging the GetX ecosystem for high-performance state management, featuring dynamic product discovery, interactive cart & checkout flows, real-time location mapping, role-based admin controls, and robust RESTful API integration."
+            },
+
+            "sections": [
+                {
+                    "icon": "fas fa-bullseye",
+                    "title": "Executive Summary",
+                    "content": "Modern digital retail demands fast load times, intuitive navigation, and reliable checkout processes. StoreApp addresses these needs by providing a comprehensive mobile storefront that connects consumers with diverse product categories, simplifies the cart-to-checkout pipeline, and empowers administrators with a built-in management suite—all packaged in a fluid, cross-platform application.",
+                    "bullets": [
+                        "<strong>Target Audience:</strong> Shoppers seeking a smooth mobile purchasing experience, and store administrators requiring on-the-go inventory and order management.",
+                        "<strong>Core Solution:</strong> An elegant platform unifying dynamic product search, real-time cart updates, secure checkout with location-based address picking, and favorite wishlists.",
+                        "<strong>Scale:</strong> Built on a scalable MVC architecture using GetX, with robust HTTP service layers, offline caching, and responsive UI suitable for long-term growth."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-layer-group",
+                    "title": "Architecture & State Management",
+                    "content": "StoreApp is structured around the <strong>MVC (Model-View-Controller) Pattern</strong> supercharged by the <strong>GetX Ecosystem</strong>. This ensures a clean separation of UI components, business logic, and data layers while providing an incredibly fast reactive state management solution.",
+                    "bullets": [
+                        "<strong>GetX Controllers:</strong> Utilized for explicit, reactive state transitions. UI components update automatically when observable variables change, eliminating unnecessary widget rebuilds.",
+                        "<strong>GetX Route Management:</strong> Centralized, context-less routing via `GetMaterialApp`, allowing seamless transitions and middleware guards for protected screens (like admin panels and checkout flows).",
+                        "<strong>Decoupled Data Layer:</strong> The data layer is decoupled into Remote and Local data sources. The `http` package drives API communication, augmented by `dartz` for functional error handling.",
+                        "<strong>Clean Business Logic:</strong> Controllers handle pure business logic and API requests, keeping the view layer strictly focused on rendering the UI."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-shopping-cart",
+                    "title": "Cart, Checkout & Order Tracking",
+                    "content": "The transaction pipeline is the most critical flow of an e-commerce platform. StoreApp implements a multi-stage checkout process with granular, real-time state tracking.",
+                    "bullets": [
+                        "<strong>Real-time Cart Management:</strong> A reactive cart controller instantly recalculates totals, shipping costs, and item quantities as the user adds or removes products without freezing the UI.",
+                        "<strong>Geographic Address Mapping:</strong> Integrated with `google_maps_flutter` and `geolocator` to allow users to visually pin their delivery address on an interactive map, automatically converting coordinates into textual addresses via `geocoding`.",
+                        "<strong>Order Lifecycle:</strong> Users can track their orders across multiple states (Pending, Processing, Shipped, Delivered) through a dedicated status dashboard."
+                    ],
+                    "isCode": true,
+                    "codeFile": "cart_controller.dart",
+                    "code": "<span class=\"syntax-type\">void</span> <span class=\"syntax-function\">addAndRemove</span>(<span class=\"syntax-type\">String</span> productId, <span class=\"syntax-type\">String</span> quantity) <span class=\"syntax-keyword\">async</span> {\n  statusRequest = <span class=\"syntax-type\">StatusRequest</span>.loading;\n  <span class=\"syntax-function\">update</span>();\n  <span class=\"syntax-keyword\">var</span> response = <span class=\"syntax-keyword\">await</span> cartdata.<span class=\"syntax-function\">cartData</span>(\n    token: myServices.sharedPreferences.<span class=\"syntax-function\">getString</span>(<span class=\"syntax-string\">\"token\"</span>)!,\n    productId: productId,\n    quantity: quantity\n  );\n  statusRequest = <span class=\"syntax-function\">handlingData</span>(response);\n  <span class=\"syntax-keyword\">if</span> (<span class=\"syntax-type\">StatusRequest</span>.success == statusRequest) {\n    <span class=\"syntax-keyword\">if</span> (response[<span class=\"syntax-string\">'status'</span>] == <span class=\"syntax-keyword\">true</span>) {\n      <span class=\"syntax-function\">showToast</span>(msg: <span class=\"syntax-string\">\"The product has been added to the cart\"</span>);\n    } <span class=\"syntax-keyword\">else</span> {\n      statusRequest = <span class=\"syntax-type\">StatusRequest</span>.failure;\n    }\n  }\n  <span class=\"syntax-function\">update</span>();\n}"
+                },
+
+                {
+                    "icon": "fas fa-user-shield",
+                    "title": "Role-Based Admin Dashboard",
+                    "content": "Unlike standard e-commerce templates, StoreApp includes a built-in Administrative suite for store owners to manage the platform directly from the mobile application without needing a separate web portal.",
+                    "bullets": [
+                        "<strong>Admin Authentication Guard:</strong> Role-based login routes users to either the standard customer layout or the secure admin dashboard depending on their account privileges.",
+                        "<strong>Catalog Management:</strong> Admins can add, edit, or remove products and categories directly through secure remote API endpoints, with support for image uploads via `file_picker`.",
+                        "<strong>Order Fulfillment:</strong> Admins access a dedicated order queue to review pending orders, update delivery statuses, and manage user requests on the fly."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-lock",
+                    "title": "Authentication, Security & Local Caching",
+                    "content": "User sessions and authentication are protected using standard security practices, while leveraging persistent caching to deliver a blazing-fast user experience.",
+                    "bullets": [
+                        "<strong>OTP Verification:</strong> Integrated `flutter_otp_text_field` for secure account creation and password recovery, adding a reliable layer of identity verification.",
+                        "<strong>Local Persistence:</strong> Utilizes `shared_preferences` and `sqflite` for caching session IDs, tokens, cart data, and localization settings, enabling instant app launches without re-authentication.",
+                        "<strong>Functional Error Handling:</strong> Using the `dartz` package, the data layer wraps API responses in `Either<Failure, Data>` types, ensuring all network exceptions are safely caught and presented to the user gracefully."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-paint-brush",
+                    "title": "UI Polish & Visual Feedback",
+                    "content": "The visual experience is deeply enhanced with rich feedback, smooth image loading, and modern UI paradigms to maximize customer retention.",
+                    "bullets": [
+                        "<strong>Lottie Micro-Animations:</strong> Implemented interactive `lottie` animations for empty cart states, successful checkouts, and network error screens, providing a delightful user experience.",
+                        "<strong>Aggressive Image Caching:</strong> `cached_network_image` is used extensively across product grids to save bandwidth, reduce load times, and prevent image flickering during scrolling.",
+                        "<strong>Smooth Interactions:</strong> Utilized `smooth_page_indicator` for onboarding flows and promotional banners, making the app feel incredibly premium and native."
+                    ]
+                },
+
+                {
+                    "icon": "fas fa-fire",
+                    "title": "Engineering Challenges Solved",
+                    "content": "Building a full-scale e-commerce platform required overcoming specific logic, state management, and routing hurdles.",
+                    "bullets": [
+                        "<strong>Challenge 1 — Optimistic UI Updates:</strong> Waiting for HTTP requests to finish before updating the Cart or Favorites causes perceived lag. <em>Solved by</em> updating GetX observable states instantly upon user tap, and reverting the state silently if the API request fails via the controller.",
+                        "<strong>Challenge 2 — Complex Route Middleware:</strong> Ensuring unauthenticated users cannot access checkout, and regular users cannot access the Admin panel. <em>Solved by</em> implementing custom GetX Route Middlewares that inspect the local `SharedPreferences` cache before rendering the requested route.",
+                        "<strong>Challenge 3 — Map-Based Address Picking:</strong> Parsing accurate string addresses from a visual map pin. <em>Solved by</em> combining `google_maps_flutter` for the visual interface and `geocoding` to reverse-geocode the Lat/Lng into a readable street address, saving both to the database."
+                    ]
+                }
+            ],
+
+            "techStack": [
+                { "name": "Flutter", "category": "Framework" },
+                { "name": "Dart", "category": "Language" },
+                { "name": "GetX", "category": "State & Routing" },
+                { "name": "http", "category": "Networking" },
+                { "name": "Dartz", "category": "Functional Logic" },
+                { "name": "Google Maps", "category": "Maps Integration" },
+                { "name": "Geolocator", "category": "Location Services" },
+                { "name": "Shared Preferences", "category": "Local Cache" },
+                { "name": "Sqflite", "category": "Local Database" },
+                { "name": "Firebase", "category": "Push Notifications" },
+                { "name": "Lottie", "category": "Animations" },
+                { "name": "Cached Network Image", "category": "Image Caching" }
+            ],
+
+            "mockup": {
+                "projectKey": "ecommerce",
+                "screens": [
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "ecommerce_screen/onboarding.png" },
+                    { "label": "Secure Login", "icon": "fas fa-sign-in-alt", "file": "ecommerce_screen/login.png" },
+                    { "label": "OTP Verification", "icon": "fas fa-key", "file": "ecommerce_screen/otp.png" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "ecommerce_screen/home.png" },
+                    { "label": "Product Catalog", "icon": "fas fa-list", "file": "ecommerce_screen/category.png" },
+                    { "label": "Product Details", "icon": "fas fa-info-circle", "file": "ecommerce_screen/product_detail.png" },
+                    { "label": "Shopping Cart", "icon": "fas fa-shopping-cart", "file": "ecommerce_screen/cart.png" },
+                    { "label": "Location Checkout", "icon": "fas fa-map-marked-alt", "file": "ecommerce_screen/checkout_map.png" },
+                    { "label": "Order Details", "icon": "fas fa-box", "file": "ecommerce_screen/order_detail.png" },
+                    { "label": "Admin Dashboard", "icon": "fas fa-user-shield", "file": "ecommerce_screen/admin_home.png" },
+                    { "label": "User Profile", "icon": "fas fa-user", "file": "ecommerce_screen/profile.png" }
                 ]
             }
         }
