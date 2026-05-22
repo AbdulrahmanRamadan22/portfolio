@@ -3682,10 +3682,107 @@ section li::before {
     
     .mobile-pdf-fallback {
         display: block !important; /* Show gorgeous responsive dashboard on mobile! */
+        height: auto !important;         /* Remove fixed height — let content flow naturally */
+        min-height: 0 !important;
+        padding: 16px !important;
+        overflow-y: visible !important;
     }
     
     .pdf-body {
-        overflow-y: auto !important; /* Ensure content is scrollable */
+        overflow-y: auto !important;     /* Enable scrolling on mobile */
+        overflow-x: hidden !important;
+        min-height: 0 !important;        /* Remove the 500px min-height that causes overflow */
+        flex-grow: 1;
+        background: var(--bg-primary) !important; /* Match app background */
+        align-items: flex-start !important;
+    }
+
+    /* cv-details tab: fill editor-content, no padding, handle own scroll via pdf-body */
+    #cv-details.tab-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        /* height:100% inherits editor-content's flex-defined height */
+        height: 100% !important;
+        /* overflow:hidden stops editor-content from scrolling for this tab */
+        overflow: hidden !important;
+        /* flex layout so pdf-preview-container can fill with flex:1 */
+        display: flex !important;
+        flex-direction: column !important;
+        box-sizing: border-box !important;
+    }
+
+    /* pdf container fills the flex tab via flex:1 */
+    #cv-details .pdf-preview-container {
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        flex: 1 !important;          /* fill remaining space in the flex tab-content */
+        min-height: 0 !important;    /* allow flex item to shrink below content size */
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* pdf-header: stack title + actions vertically on small screens */
+    .pdf-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pdf-title {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .pdf-actions {
+        width: 100%;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .pdf-download-btn {
+        flex: 1;
+        justify-content: center;
+        min-height: 36px;
+        font-size: 12px;
+    }
+
+    .pdf-action-close {
+        flex-shrink: 0;
+        min-height: 36px;
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 1px solid var(--border-color);
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    /* fallback-card: full width, readable on narrow screens */
+    .fallback-card {
+        max-width: 100% !important;
+        margin: 0 0 20px 0 !important;
+        border-radius: 12px !important;
+        padding: 20px 16px !important;
+    }
+
+    .fallback-highlights li {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .fallback-btn {
+        min-height: 44px;
+        font-size: 14px;
     }
 }
 
