@@ -1,4 +1,4 @@
-// Loading Animation
+﻿// Loading Animation
 class LoadingManager {
     constructor() {
         this.commands = [
@@ -44,12 +44,12 @@ class LoadingManager {
 
     showOutput(element) {
         const outputs = [
-            'Fetching mobile development expertise... ✓',
-            'Loading Flutter and Dart skills... ✓',
-            'Compiling Wratil and Jobizz projects... ✓',
-            'Initializing Clean Architecture portfolio... ✓',
-            'Setting up interactive interface... ✓',
-            'Portfolio ready! Welcome Abdelrahman Ramadan 🚀'
+            'Fetching mobile development expertise... âœ“',
+            'Loading Flutter and Dart skills... âœ“',
+            'Compiling Wratil and Jobizz projects... âœ“',
+            'Initializing Clean Architecture portfolio... âœ“',
+            'Setting up interactive interface... âœ“',
+            'Portfolio ready! Welcome Abdelrahman Ramadan ًںڑ€'
         ];
 
         let outputIndex = 0;
@@ -520,7 +520,7 @@ class PortfolioManager {
             }
 
             // Build mockup screenshot buttons & set the first file as active source directly
-            const firstScreenFile = cs.mockup.screens && cs.mockup.screens.length > 0 ? cs.mockup.screens[0].file : 'abdelrahman.png';
+            const firstScreenFile = cs.mockup.screens && cs.mockup.screens.length > 0 ? cs.mockup.screens[0].file : 'abdelrahman.webp';
             const screensHtml = cs.mockup.screens.map((screen, idx) => `
                 <button class="mockup-btn${idx === 0 ? ' active' : ''}" onclick="portfolioManager.changeScreenshot('${cs.mockup.projectKey}', '${screen.file}', this)">
                     <i class="${screen.icon}"></i> ${screen.label}
@@ -548,7 +548,7 @@ class PortfolioManager {
                             </div>
                             <div class="case-study-right">
                                 <div class="mockup-container">
-                                    <h4>📱 Interactive Application Screens</h4>
+                                    <h4>ًں“± Interactive Application Screens</h4>
                                     <p class="mockup-hint">Click the buttons below the device to swap active screens!</p>
                                     <div class="device-frame">
                                         <div class="device-screen">
@@ -954,7 +954,7 @@ class PortfolioManager {
         tabElement.innerHTML = `
             <i class="${config.icon}"></i>
             <span>${config.label}</span>
-            <button class="tab-close" aria-label="Close tab">×</button>
+            <button class="tab-close" aria-label="Close tab">أ—</button>
         `;
 
         // Add click listener for tab switching

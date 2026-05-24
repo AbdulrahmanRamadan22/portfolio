@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Abdelrahman Ramadan - Flutter Developer Portfolio
  * Dedicated Local Database File
  * Separates data from HTML layout structure for maximum modularity and ease of maintenance.
@@ -8,7 +8,7 @@ window.portfolioData = {
         {
             date: "Mar 2026 - Present",
             title: "Flutter Developer",
-            company: "Freelance Project — Wratil",
+            company: "Freelance Project â€” Wratil",
             companyUrl: "https://wartil.com/",
             location: "Remote",
             description: "A digital ecosystem connecting students with certified Quran teachers via real-time video sessions, smart booking, and an AI-powered advisory system.",
@@ -23,7 +23,7 @@ window.portfolioData = {
         {
             date: "Dec 2025 - Feb 2026",
             title: "Flutter Developer",
-            company: "Freelance Project — Hala Bakeries ERP",
+            company: "Freelance Project â€” Hala Bakeries ERP",
             companyUrl: "https://hala-markets.com/",
             location: "Remote",
             description: "Production-grade B2B ERP system automating multi-branch inventory control, employee operations, and sales auditing for a large bakery distribution network.",
@@ -38,7 +38,7 @@ window.portfolioData = {
         {
             date: "Sep 2025 - Nov 2025",
             title: "Flutter Developer (Part-Time)",
-            company: "Freelance Project — Fluoro Master",
+            company: "Freelance Project â€” Fluoro Master",
             companyUrl: "",
             location: "Remote",
             description: "A comprehensive medical utility and educational ecosystem for radiology and fluoroscopy, featuring detailed procedure guides, dose calculators, interactive simulators, and an AI-powered advisory system.",
@@ -68,7 +68,7 @@ window.portfolioData = {
     ],
     projects: [
         {
-            title: "Jobizz — Career Platform",
+            title: "Jobizz â€” Career Platform",
             githubUrl: "https://github.com/AbdulrahmanRamadan22/jobizz",
             type: "Graduation Project",
             date: "Mar 2025 - Jul 2025",
@@ -275,7 +275,7 @@ window.portfolioData = {
             "fileName": "jobizz_case_study.md",
 
             "hero": {
-                "title": "Jobizz — Modern Career Marketplace & Portfolio Ecosystem",
+                "title": "Jobizz â€” Modern Career Marketplace & Portfolio Ecosystem",
                 "lead": "A production-grade, state-of-the-art Flutter mobile application utilizing Clean Architecture and BLoC state management to deliver seamless job discovery, advanced search filtering, multi-step job applications, local PDF resume previewing, secure credential persistence, and a dynamic professional profile builder."
             },
 
@@ -283,7 +283,7 @@ window.portfolioData = {
                 {
                     "icon": "fas fa-bullseye",
                     "title": "Executive Summary",
-                    "content": "Traditional job search platforms are often slow, lack clean navigation, and fail to provide seamless resume management or profile builders in a unified interface. Jobizz solves this by delivering an end-to-end, high-performance mobile ecosystem that connects candidates with top hiring companies, simplifies the job application pipeline, and offers local resume previewing and profile customization — all packaged in a modern, fluid cross-platform app.",
+                    "content": "Traditional job search platforms are often slow, lack clean navigation, and fail to provide seamless resume management or profile builders in a unified interface. Jobizz solves this by delivering an end-to-end, high-performance mobile ecosystem that connects candidates with top hiring companies, simplifies the job application pipeline, and offers local resume previewing and profile customization â€” all packaged in a modern, fluid cross-platform app.",
                     "bullets": [
                         "<strong>Target Audience:</strong> Professionals looking for certified opportunities and hiring companies showcasing detailed organizational insights.",
                         "<strong>Core Solution:</strong> An elegant application that unifies search, category discovery, multi-step application tracking, instant resume previewing, and dynamic professional experience management.",
@@ -370,9 +370,9 @@ window.portfolioData = {
                     "title": "Engineering Challenges Solved",
                     "content": "Resolving complex state synchronization and device compatibility issues required implementing advanced design patterns.",
                     "bullets": [
-                        "<strong>Challenge 1 — BLoC State in Multi-step Flows:</strong> Multi-step job applications require preserving inputs (e.g. CV choice, forms) during screen navigation. <em>Solved by</em> scoping a single ApplicationCubit to the flow's route, updating an immutable Freezed state using copyWith() so fields persist during navigation.",
-                        "<strong>Challenge 2 — Dynamic Role Switching:</strong> Instantly toggling between different candidate personas without restarting the app or corrupting the local cache. <em>Solved by</em> implementing a centralized switch-profile cubit that clears profile-specific repositories and re-fetches relevant details without altering the core session token.",
-                        "<strong>Challenge 3 — Responsive Layout Scaling:</strong> Handling varying device aspect ratios without overflowing widgets. <em>Solved by</em> pairing ScreenUtil scaling for exact widget proportions with responsive layout breakpoints for larger screen formats."
+                        "<strong>Challenge 1 â€” BLoC State in Multi-step Flows:</strong> Multi-step job applications require preserving inputs (e.g. CV choice, forms) during screen navigation. <em>Solved by</em> scoping a single ApplicationCubit to the flow's route, updating an immutable Freezed state using copyWith() so fields persist during navigation.",
+                        "<strong>Challenge 2 â€” Dynamic Role Switching:</strong> Instantly toggling between different candidate personas without restarting the app or corrupting the local cache. <em>Solved by</em> implementing a centralized switch-profile cubit that clears profile-specific repositories and re-fetches relevant details without altering the core session token.",
+                        "<strong>Challenge 3 â€” Responsive Layout Scaling:</strong> Handling varying device aspect ratios without overflowing widgets. <em>Solved by</em> pairing ScreenUtil scaling for exact widget proportions with responsive layout breakpoints for larger screen formats."
                     ]
                 }
             ],
@@ -398,20 +398,20 @@ window.portfolioData = {
             "mockup": {
                 "projectKey": "jobizz",
                 "screens": [
-                    { "label": "Onboarding", "icon": "fas fa-star", "file": "jobizz_screen/onboarding1.png" },
-                    { "label": "Secure Login", "icon": "fas fa-sign-in-alt", "file": "jobizz_screen/login.png" },
-                    { "label": "Registration", "icon": "fas fa-user-plus", "file": "jobizz_screen/register.png" },
-                    { "label": "Reset Password", "icon": "fas fa-key", "file": "jobizz_screen/reset_password.png" },
-                    { "label": "OTP Verification", "icon": "fas fa-key", "file": "jobizz_screen/otp.png" },
-                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "jobizz_screen/home.png" },
-                    { "label": "Company Details", "icon": "fas fa-building", "file": "jobizz_screen/company_profile.png" },
-                    { "label": "Smart Search", "icon": "fas fa-search", "file": "jobizz_screen/search.png" },
-                    { "label": "Advanced Filters", "icon": "fas fa-filter", "file": "jobizz_screen/search_filter.png" },
-                    { "label": "Job Insights", "icon": "fas fa-info-circle", "file": "jobizz_screen/job_detail.png" },
-                    { "label": "Apply Flow", "icon": "fas fa-paper-plane", "file": "jobizz_screen/apply.png" },
-                    { "label": "Application Tracking", "icon": "fas fa-calendar-check", "file": "jobizz_screen/application_tracking.png" },
-                    { "label": "Portfolio Manager", "icon": "fas fa-briefcase", "file": "jobizz_screen/portfolio_uploaded.png" },
-                    { "label": "User Profile", "icon": "fas fa-user", "file": "jobizz_screen/profile.png" }
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "jobizz_screen/onboarding1.webp" },
+                    { "label": "Secure Login", "icon": "fas fa-sign-in-alt", "file": "jobizz_screen/login.webp" },
+                    { "label": "Registration", "icon": "fas fa-user-plus", "file": "jobizz_screen/register.webp" },
+                    { "label": "Reset Password", "icon": "fas fa-key", "file": "jobizz_screen/reset_password.webp" },
+                    { "label": "OTP Verification", "icon": "fas fa-key", "file": "jobizz_screen/otp.webp" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "jobizz_screen/home.webp" },
+                    { "label": "Company Details", "icon": "fas fa-building", "file": "jobizz_screen/company_profile.webp" },
+                    { "label": "Smart Search", "icon": "fas fa-search", "file": "jobizz_screen/search.webp" },
+                    { "label": "Advanced Filters", "icon": "fas fa-filter", "file": "jobizz_screen/search_filter.webp" },
+                    { "label": "Job Insights", "icon": "fas fa-info-circle", "file": "jobizz_screen/job_detail.webp" },
+                    { "label": "Apply Flow", "icon": "fas fa-paper-plane", "file": "jobizz_screen/apply.webp" },
+                    { "label": "Application Tracking", "icon": "fas fa-calendar-check", "file": "jobizz_screen/application_tracking.webp" },
+                    { "label": "Portfolio Manager", "icon": "fas fa-briefcase", "file": "jobizz_screen/portfolio_uploaded.webp" },
+                    { "label": "User Profile", "icon": "fas fa-user", "file": "jobizz_screen/profile.webp" }
                 ]
             }
         },
@@ -423,15 +423,15 @@ window.portfolioData = {
             "fileName": "wratil_case_study.md",
 
             "hero": {
-                "title": "Wratil — Quranic Mastery Ecosystem",
-                "lead": "A production-grade Flutter platform connecting students with certified Quran teachers through real-time Agora RTC video sessions, an interactive Syncfusion Quran reader, and a complete booking & subscription commerce system — built on a scalable Feature-Driven Modular Architecture."
+                "title": "Wratil â€” Quranic Mastery Ecosystem",
+                "lead": "A production-grade Flutter platform connecting students with certified Quran teachers through real-time Agora RTC video sessions, an interactive Syncfusion Quran reader, and a complete booking & subscription commerce system â€” built on a scalable Feature-Driven Modular Architecture."
             },
 
             "sections": [
                 {
                     "icon": "fas fa-bullseye",
                     "title": "Executive Summary",
-                    "content": "Traditional Quranic learning lacks digital infrastructure — scattered tools, no structured scheduling, and no reliable real-time communication built for education. Wratil solves this by delivering a dedicated, end-to-end ecosystem that connects global students with verified teachers, streamlines session booking, and handles subscriptions and payments — all inside a single cross-platform mobile app.",
+                    "content": "Traditional Quranic learning lacks digital infrastructure â€” scattered tools, no structured scheduling, and no reliable real-time communication built for education. Wratil solves this by delivering a dedicated, end-to-end ecosystem that connects global students with verified teachers, streamlines session booking, and handles subscriptions and payments â€” all inside a single cross-platform mobile app.",
                     "bullets": [
                         "<strong>Target Users:</strong> Students seeking certified Quranic instruction and teachers looking to monetize their expertise globally.",
                         "<strong>Core Problem Solved:</strong> Fragmented tools replaced by one unified platform covering discovery, booking, live sessions, payments, and learning resources.",
@@ -444,23 +444,23 @@ window.portfolioData = {
                     "title": "Architecture & Engineering Decisions",
                     "content": "Wratil is built on a <strong>Feature-Driven Modular Architecture</strong> paired with the <strong>Repository Pattern</strong>, enforcing a strict three-layer separation across the entire codebase. Every engineering decision was made to maximize testability, scalability, and long-term maintainability.",
                     "bullets": [
-                        "<strong>BLoC / Cubit:</strong> Chosen over Provider or Riverpod for its strict event-driven contract — every state transition is explicit, predictable, and independently testable, which is critical in a complex multi-feature app.",
+                        "<strong>BLoC / Cubit:</strong> Chosen over Provider or Riverpod for its strict event-driven contract â€” every state transition is explicit, predictable, and independently testable, which is critical in a complex multi-feature app.",
                         "<strong>GetIt (Service Locator):</strong> Enables true module decoupling. Features register their own dependencies at startup, making it trivial to swap implementations or inject mocks during testing without touching any UI code.",
                         "<strong>Retrofit + Dio:</strong> Retrofit generates type-safe API interfaces from annotations, eliminating parsing boilerplate. Dio handles the underlying transport layer with centralized interceptors for token injection, logging, and error normalization.",
-                        "<strong>Repository Pattern:</strong> Every feature's data layer exposes an abstract repository interface. The logic layer (Cubit) has zero awareness of whether data comes from a remote API or local cache — this makes offline support and migration seamless.",
+                        "<strong>Repository Pattern:</strong> Every feature's data layer exposes an abstract repository interface. The logic layer (Cubit) has zero awareness of whether data comes from a remote API or local cache â€” this makes offline support and migration seamless.",
                         "<strong>Pusher Channels:</strong> Handles all real-time signaling (call invitations, session start alerts, status updates) separately from the Agora media stream, keeping concerns cleanly separated."
                     ]
                 },
 
                 {
                     "icon": "fas fa-video",
-                    "title": "Live Sessions — Agora RTC Deep Dive",
+                    "title": "Live Sessions â€” Agora RTC Deep Dive",
                     "content": "The most technically demanding feature in Wratil. Real-time audio/video sessions required orchestrating multiple systems simultaneously: Agora's media engine, Pusher's signaling layer, local permission management, and app lifecycle events.",
                     "bullets": [
-                        "<strong>Call Orchestration:</strong> Dedicated Cubits manage the full session lifecycle — token verification, microphone/camera permission flows, connection health monitoring, and remote peer state tracking (joined, muted, disconnected).",
+                        "<strong>Call Orchestration:</strong> Dedicated Cubits manage the full session lifecycle â€” token verification, microphone/camera permission flows, connection health monitoring, and remote peer state tracking (joined, muted, disconnected).",
                         "<strong>Pusher Signaling:</strong> Call invitations and session start notifications are pushed via Pusher websockets before the Agora channel is joined, ensuring zero-delay coordination between teacher and student.",
                         "<strong>Lifecycle Handling:</strong> Custom AppLifecycleObserver detects backgrounding and incoming phone calls, gracefully pausing the session and resuming state without dropping the channel connection.",
-                        "<strong>Network Resilience:</strong> Implemented automatic reconnection logic with exponential backoff — if a participant's connection degrades, the session recovers silently without requiring a manual rejoin."
+                        "<strong>Network Resilience:</strong> Implemented automatic reconnection logic with exponential backoff â€” if a participant's connection degrades, the session recovers silently without requiring a manual rejoin."
                     ],
                     "isCode": true,
                     "codeFile": "agora_service.dart",
@@ -470,11 +470,11 @@ window.portfolioData = {
                 {
                     "icon": "fas fa-book-open",
                     "title": "Interactive Quran Reader",
-                    "content": "Building a professional Quran reading experience on mobile required solving performance challenges unique to high-resolution Arabic PDF rendering — a problem most general-purpose PDF viewers handle poorly.",
+                    "content": "Building a professional Quran reading experience on mobile required solving performance challenges unique to high-resolution Arabic PDF rendering â€” a problem most general-purpose PDF viewers handle poorly.",
                     "bullets": [
                         "<strong>Syncfusion PDF Engine:</strong> Chosen specifically for its optimized Arabic text rendering and efficient page parsing, outperforming alternatives like pdf_render on lower-end Android devices.",
-                        "<strong>Memory Management:</strong> Implemented lazy page loading with an LRU cache strategy — only the current page and its immediate neighbors are kept in memory, preventing OOM crashes on long reading sessions.",
-                        "<strong>Dual Reading Modes:</strong> Engineered two distinct UX modes — a continuous scroll mode for casual reading and a single-page mode with swipe gestures optimized for focused recitation practice.",
+                        "<strong>Memory Management:</strong> Implemented lazy page loading with an LRU cache strategy â€” only the current page and its immediate neighbors are kept in memory, preventing OOM crashes on long reading sessions.",
+                        "<strong>Dual Reading Modes:</strong> Engineered two distinct UX modes â€” a continuous scroll mode for casual reading and a single-page mode with swipe gestures optimized for focused recitation practice.",
                         "<strong>60fps Target:</strong> All PDF rendering runs on an isolated Isolate to keep the main UI thread free, ensuring the app remains responsive even while loading dense, high-resolution pages."
                     ]
                 },
@@ -484,10 +484,10 @@ window.portfolioData = {
                     "title": "Booking & Commerce System",
                     "content": "The session booking and subscription pipeline is the commercial backbone of the platform, requiring precise real-time data synchronization and bulletproof transaction handling.",
                     "bullets": [
-                        "<strong>Real-Time Slot Management:</strong> Teacher availability is fetched and locked optimistically on the client — if a slot is taken between fetch and confirm, the server rejects the booking and the UI rolls back gracefully with a clear user message.",
+                        "<strong>Real-Time Slot Management:</strong> Teacher availability is fetched and locked optimistically on the client â€” if a slot is taken between fetch and confirm, the server rejects the booking and the UI rolls back gracefully with a clear user message.",
                         "<strong>Timezone Synchronization:</strong> All availability data is stored in UTC on the backend. Custom Dart extension methods in the Core layer convert and display slots in the user's local timezone, preventing scheduling conflicts across regions.",
                         "<strong>Subscription & Coupons:</strong> Built a flexible subscription engine supporting multiple package tiers with coupon validation applied server-side before any charge is processed.",
-                        "<strong>Gifting System:</strong> An innovative feature allowing users to purchase and send subscription packages to others — handled via a dedicated gifting flow with recipient validation and wallet credit attribution.",
+                        "<strong>Gifting System:</strong> An innovative feature allowing users to purchase and send subscription packages to others â€” handled via a dedicated gifting flow with recipient validation and wallet credit attribution.",
                         "<strong>Digital Wallet:</strong> In-app wallet tracks credits, session deductions, and subscription activations with an auditable transaction history synchronized in real-time."
                     ]
                 },
@@ -498,9 +498,9 @@ window.portfolioData = {
                     "content": "Authentication and data security were treated as first-class concerns, not afterthoughts. The multi-step auth flow and local data strategy reflect production-level security practices.",
                     "bullets": [
                         "<strong>Multi-Step Auth:</strong> Registration flow includes OTP verification via Pinput with automated country code detection, preventing invalid phone submissions before they hit the backend.",
-                        "<strong>Encrypted Token Storage:</strong> Auth tokens are stored exclusively in Flutter Secure Storage (AES encryption on Android, Keychain on iOS) — never in plain SharedPreferences.",
+                        "<strong>Encrypted Token Storage:</strong> Auth tokens are stored exclusively in Flutter Secure Storage (AES encryption on Android, Keychain on iOS) â€” never in plain SharedPreferences.",
                         "<strong>Token Injection:</strong> Dio interceptors automatically attach Bearer tokens to every authenticated request, handling token refresh transparently without any manual intervention in feature code.",
-                        "<strong>Session Persistence:</strong> App state survives cold starts — users resume their last session context without re-authentication, using a secure combination of Secure Storage and SharedPreferences."
+                        "<strong>Session Persistence:</strong> App state survives cold starts â€” users resume their last session context without re-authentication, using a secure combination of Secure Storage and SharedPreferences."
                     ]
                 },
 
@@ -509,10 +509,10 @@ window.portfolioData = {
                     "title": "Localization & UI Excellence",
                     "content": "Wratil serves a global Arabic and English-speaking audience, requiring deep localization support beyond simple string translation.",
                     "bullets": [
-                        "<strong>Automated RTL/LTR Switching:</strong> The entire layout direction flips dynamically based on locale — padding, alignment, icon mirroring, and text direction all adapt without any per-widget conditional logic.",
+                        "<strong>Automated RTL/LTR Switching:</strong> The entire layout direction flips dynamically based on locale â€” padding, alignment, icon mirroring, and text direction all adapt without any per-widget conditional logic.",
                         "<strong>Cairo Font System:</strong> Custom Cairo font family used throughout for a premium Arabic typography experience that maintains consistency across both locales.",
-                        "<strong>Shimmer Loading States:</strong> Skeletonizer provides contextual loading skeletons matching the shape of each screen's content — users always understand what is loading and where.",
-                        "<strong>Lottie Micro-Animations:</strong> Strategically placed Lottie animations for empty states, success confirmations, and onboarding steps — improving engagement without impacting performance."
+                        "<strong>Shimmer Loading States:</strong> Skeletonizer provides contextual loading skeletons matching the shape of each screen's content â€” users always understand what is loading and where.",
+                        "<strong>Lottie Micro-Animations:</strong> Strategically placed Lottie animations for empty states, success confirmations, and onboarding steps â€” improving engagement without impacting performance."
                     ]
                 },
 
@@ -521,9 +521,9 @@ window.portfolioData = {
                     "title": "Engineering Challenges Solved",
                     "content": "Three challenges in this project required solutions that went significantly beyond standard Flutter development patterns.",
                     "bullets": [
-                        "<strong>Challenge 1 — Real-Time Video Orchestration:</strong> Maintaining synchronized, low-latency sessions across varying network conditions while managing app lifecycle events. <em>Solved by</em> engineering custom BLoC listeners that orchestrate Agora state, Pusher signals, and platform lifecycle transitions as a unified state machine.",
-                        "<strong>Challenge 2 — Global Timezone Synchronization:</strong> Displaying teacher availability correctly across dozens of timezones without booking conflicts. <em>Solved by</em> standardizing all data to UTC at the API layer and building a centralized timezone conversion utility in Core, applied universally across all booking UI.",
-                        "<strong>Challenge 3 — High-Fidelity PDF Rendering:</strong> Loading heavy Quran PDFs without memory leaks or frame drops on mid-range devices. <em>Solved by</em> isolating rendering to a background Isolate, implementing an LRU page cache, and tuning Syncfusion's configuration for Arabic document profiles."
+                        "<strong>Challenge 1 â€” Real-Time Video Orchestration:</strong> Maintaining synchronized, low-latency sessions across varying network conditions while managing app lifecycle events. <em>Solved by</em> engineering custom BLoC listeners that orchestrate Agora state, Pusher signals, and platform lifecycle transitions as a unified state machine.",
+                        "<strong>Challenge 2 â€” Global Timezone Synchronization:</strong> Displaying teacher availability correctly across dozens of timezones without booking conflicts. <em>Solved by</em> standardizing all data to UTC at the API layer and building a centralized timezone conversion utility in Core, applied universally across all booking UI.",
+                        "<strong>Challenge 3 â€” High-Fidelity PDF Rendering:</strong> Loading heavy Quran PDFs without memory leaks or frame drops on mid-range devices. <em>Solved by</em> isolating rendering to a background Isolate, implementing an LRU page cache, and tuning Syncfusion's configuration for Arabic document profiles."
                     ]
                 }
             ],
@@ -549,16 +549,16 @@ window.portfolioData = {
             "mockup": {
                 "projectKey": "wratil",
                 "screens": [
-                    { "label": "Onboarding", "icon": "fas fa-star", "file": "wratil_screen/onboarding.png" },
-                    { "label": "Home Hub", "icon": "fas fa-home", "file": "wratil_screen/home.png" },
-                    { "label": "Quran Reader", "icon": "fas fa-book-open", "file": "wratil_screen/quran.png" },
-                    { "label": "Teacher Discovery", "icon": "fas fa-search", "file": "wratil_screen/teachers.png" },
-                    { "label": "Session Booking", "icon": "fas fa-calendar-check", "file": "wratil_screen/booking.png" },
-                    { "label": "My Sessions", "icon": "fas fa-calendar-alt", "file": "wratil_screen/my_sessions.png" },
-                    { "label": "Live Session", "icon": "fas fa-video", "file": "wratil_screen/session.png" },
-                    { "label": "Digital Wallet", "icon": "fas fa-wallet", "file": "wratil_screen/wallet.png" },
-                    { "label": "Packages", "icon": "fas fa-credit-card", "file": "wratil_screen/packages.png" },
-                    { "label": "notifications", "icon": "fas fa-bell", "file": "wratil_screen/notifications.png" }
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "wratil_screen/onboarding.webp" },
+                    { "label": "Home Hub", "icon": "fas fa-home", "file": "wratil_screen/home.webp" },
+                    { "label": "Quran Reader", "icon": "fas fa-book-open", "file": "wratil_screen/quran.webp" },
+                    { "label": "Teacher Discovery", "icon": "fas fa-search", "file": "wratil_screen/teachers.webp" },
+                    { "label": "Session Booking", "icon": "fas fa-calendar-check", "file": "wratil_screen/booking.webp" },
+                    { "label": "My Sessions", "icon": "fas fa-calendar-alt", "file": "wratil_screen/my_sessions.webp" },
+                    { "label": "Live Session", "icon": "fas fa-video", "file": "wratil_screen/session.webp" },
+                    { "label": "Digital Wallet", "icon": "fas fa-wallet", "file": "wratil_screen/wallet.webp" },
+                    { "label": "Packages", "icon": "fas fa-credit-card", "file": "wratil_screen/packages.webp" },
+                    { "label": "notifications", "icon": "fas fa-bell", "file": "wratil_screen/notifications.webp" }
 
                 ]
             }
@@ -570,7 +570,7 @@ window.portfolioData = {
             "fileName": "hala_bakeries_case_study.md",
 
             "hero": {
-                "title": "Hala Bakeries — Enterprise Sales & Inventory System",
+                "title": "Hala Bakeries â€” Enterprise Sales & Inventory System",
                 "lead": "A production-grade B2B Flutter application engineered to streamline multi-branch bakery operations, featuring real-time inventory tracking, role-based access control, comprehensive offline-aware data synchronization, and advanced PDF/Excel reporting capabilities."
             },
 
@@ -632,7 +632,7 @@ window.portfolioData = {
                     ],
                     "isCode": true,
                     "codeFile": "connectivity_banner.dart",
-                    "code": "<span class=\"syntax-type\">StreamBuilder</span>&lt;<span class=\"syntax-type\">InternetStatus</span>&gt;(\n  stream: <span class=\"syntax-type\">InternetConnection</span>().onStatusChange,\n  builder: (context, snapshot) {\n    <span class=\"syntax-keyword\">if</span> (snapshot.hasData &amp;&amp; snapshot.data == <span class=\"syntax-type\">InternetStatus</span>.disconnected) {\n      <span class=\"syntax-keyword\">return</span> <span class=\"syntax-type\">Material</span>(\n        color: <span class=\"syntax-type\">Colors</span>.red,\n        child: <span class=\"syntax-type\">Text</span>(\n          <span class=\"syntax-string\">'لا يوجد اتصال بالإنترنت - وضع العمل دون اتصال'</span>,\n        ),\n      );\n    }\n    <span class=\"syntax-keyword\">return</span> <span class=\"syntax-keyword\">const</span> <span class=\"syntax-type\">SizedBox</span>.shrink();\n  },\n);"
+                    "code": "<span class=\"syntax-type\">StreamBuilder</span>&lt;<span class=\"syntax-type\">InternetStatus</span>&gt;(\n  stream: <span class=\"syntax-type\">InternetConnection</span>().onStatusChange,\n  builder: (context, snapshot) {\n    <span class=\"syntax-keyword\">if</span> (snapshot.hasData &amp;&amp; snapshot.data == <span class=\"syntax-type\">InternetStatus</span>.disconnected) {\n      <span class=\"syntax-keyword\">return</span> <span class=\"syntax-type\">Material</span>(\n        color: <span class=\"syntax-type\">Colors</span>.red,\n        child: <span class=\"syntax-type\">Text</span>(\n          <span class=\"syntax-string\">'ظ„ط§ ظٹظˆط¬ط¯ ط§طھطµط§ظ„ ط¨ط§ظ„ط¥ظ†طھط±ظ†طھ - ظˆط¶ط¹ ط§ظ„ط¹ظ…ظ„ ط¯ظˆظ† ط§طھطµط§ظ„'</span>,\n        ),\n      );\n    }\n    <span class=\"syntax-keyword\">return</span> <span class=\"syntax-keyword\">const</span> <span class=\"syntax-type\">SizedBox</span>.shrink();\n  },\n);"
                 },
 
                 {
@@ -666,22 +666,22 @@ window.portfolioData = {
                 "projectKey": "hala_bakeries",
                 "screens": [
 
-                    { "label": "Splash", "icon": "fas fa-spinner", "file": "hala_bakeries_screen/splash.png" },
-                    { "label": "Login", "icon": "fas fa-sign-in-alt", "file": "hala_bakeries_screen/login.png" },
-                    { "label": "Change Password", "icon": "fas fa-key", "file": "hala_bakeries_screen/change_password.png" },
-                    { "label": "Admin Dashboard", "icon": "fas fa-chart-line", "file": "hala_bakeries_screen/home.png" },
-                    { "label": "Add Admin", "icon": "fas fa-user-plus", "file": "hala_bakeries_screen/add_admin.png" },
-                    { "label": "Employee Dashboard", "icon": "fas fa-user-tie", "file": "hala_bakeries_screen/employee_dashboard.png" },
-                    { "label": "Inventory reports", "icon": "fas fa-boxes", "file": "hala_bakeries_screen/Inventory_reports.png" },
-                    { "label": "Receipt Reports", "icon": "fas fa-receipt", "file": "hala_bakeries_screen/receipt_report.png" },
-                    { "label": "Low Stock Alerts", "icon": "fas fa-exclamation-triangle", "file": "hala_bakeries_screen/low_stock_alerts.png" },
-                    { "label": "Add Product", "icon": "fas fa-plus-circle", "file": "hala_bakeries_screen/add_product.png" },
-                    { "label": "Branch List", "icon": "fas fa-store", "file": "hala_bakeries_screen/branch_list.png" },
-                    { "label": "Personnel Management", "icon": "fas fa-users", "file": " hala_bakeries_screen/personnel_management.png" },
-                    { "label": "Product Management", "icon": "fas fa-box", "file": "hala_bakeries_screen/product_management.png" },
-                    { "label": "Importing Products", "icon": "fas fa-file-import", "file": "hala_bakeries_screen/importing_products.png" },
-                    { "label": "Reports Generation", "icon": "fas fa-file-excel", "file": "hala_bakeries_screen/reports_generation.png" },
-                    { "label": "Daily Inventory", "icon": "fas fa-boxes", "file": "hala_bakeries_screen/daily_inventory.png" },
+                    { "label": "Splash", "icon": "fas fa-spinner", "file": "hala_bakeries_screen/splash.webp" },
+                    { "label": "Login", "icon": "fas fa-sign-in-alt", "file": "hala_bakeries_screen/login.webp" },
+                    { "label": "Change Password", "icon": "fas fa-key", "file": "hala_bakeries_screen/change_password.webp" },
+                    { "label": "Admin Dashboard", "icon": "fas fa-chart-line", "file": "hala_bakeries_screen/home.webp" },
+                    { "label": "Add Admin", "icon": "fas fa-user-plus", "file": "hala_bakeries_screen/add_admin.webp" },
+                    { "label": "Employee Dashboard", "icon": "fas fa-user-tie", "file": "hala_bakeries_screen/employee_dashboard.webp" },
+                    { "label": "Inventory reports", "icon": "fas fa-boxes", "file": "hala_bakeries_screen/Inventory_reports.webp" },
+                    { "label": "Receipt Reports", "icon": "fas fa-receipt", "file": "hala_bakeries_screen/receipt_report.webp" },
+                    { "label": "Low Stock Alerts", "icon": "fas fa-exclamation-triangle", "file": "hala_bakeries_screen/low_stock_alerts.webp" },
+                    { "label": "Add Product", "icon": "fas fa-plus-circle", "file": "hala_bakeries_screen/add_product.webp" },
+                    { "label": "Branch List", "icon": "fas fa-store", "file": "hala_bakeries_screen/branch_list.webp" },
+                    { "label": "Personnel Management", "icon": "fas fa-users", "file": " hala_bakeries_screen/personnel_management.webp" },
+                    { "label": "Product Management", "icon": "fas fa-box", "file": "hala_bakeries_screen/product_management.webp" },
+                    { "label": "Importing Products", "icon": "fas fa-file-import", "file": "hala_bakeries_screen/importing_products.webp" },
+                    { "label": "Reports Generation", "icon": "fas fa-file-excel", "file": "hala_bakeries_screen/reports_generation.webp" },
+                    { "label": "Daily Inventory", "icon": "fas fa-boxes", "file": "hala_bakeries_screen/daily_inventory.webp" },
 
 
                 ]
@@ -694,7 +694,7 @@ window.portfolioData = {
             "fileName": "homeease_case_study.md",
 
             "hero": {
-                "title": "HomeEase — Modern On-Demand Home Services Platform",
+                "title": "HomeEase â€” Modern On-Demand Home Services Platform",
                 "lead": "A robust, multi-lingual Flutter mobile application utilizing Feature-First Architecture and BLoC state management to deliver seamless home service booking, professional discovery, secure payments, digital wallet management, and real-time order tracking."
             },
 
@@ -773,7 +773,7 @@ window.portfolioData = {
                     "title": "Intelligent Routing & Session Management",
                     "content": "Ensuring users land exactly on the right screen based on their authentication and onboarding history.",
                     "bullets": [
-                        "<strong>Initial Route Evaluation:</strong> The app dynamically calculates the starting screen at launch—checking for language preferences, onboarding completion, and valid cached session tokens.",
+                        "<strong>Initial Route Evaluation:</strong> The app dynamically calculates the starting screen at launchâ€”checking for language preferences, onboarding completion, and valid cached session tokens.",
                         "<strong>Centralized AppRouter:</strong> All screen transitions are managed through a centralized routing system, keeping complex navigation logic entirely out of UI widgets."
                     ]
                 }
@@ -797,18 +797,24 @@ window.portfolioData = {
             "mockup": {
                 "projectKey": "homeease",
                 "screens": [
-                    { "label": "Language Selection", "icon": "fas fa-language", "file": "homeease_screen/select_language.png" },
-                    { "label": "Onboarding", "icon": "fas fa-star", "file": "homeease_screen/onboarding.png" },
-                    { "label": "User Login", "icon": "fas fa-sign-in-alt", "file": "homeease_screen/login.png" },
-                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "homeease_screen/home.png" },
-                    { "label": "Service Categories", "icon": "fas fa-th-large", "file": "homeease_screen/categories.png" },
-                    { "label": "Company Profiles", "icon": "fas fa-building", "file": "homeease_screen/companies.png" },
-                    { "label": "Service Details", "icon": "fas fa-tools", "file": "homeease_screen/service.png" },
-                    { "label": "Address Management", "icon": "fas fa-map-marker-alt", "file": "homeease_screen/address.png" },
-                    { "label": "Order Details", "icon": "fas fa-receipt", "file": "homeease_screen/orderdetalis.png" },
-                    { "label": "My Wallet", "icon": "fas fa-wallet", "file": "homeease_screen/mywallet.png" },
-                    { "label": "Order History", "icon": "fas fa-history", "file": "homeease_screen/history.png" },
-                    { "label": "User Profile", "icon": "fas fa-user", "file": "homeease_screen/profile.png" }
+                    { "label": "Language Selection", "icon": "fas fa-language", "file": "homeease_screen/select_language.webp" },
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "homeease_screen/onboarding.webp" },
+                    { "label": "User Login", "icon": "fas fa-sign-in-alt", "file": "homeease_screen/login.webp" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "homeease_screen/home.webp" },
+                    { "label": "Service Categories", "icon": "fas fa-th-large", "file": "homeease_screen/categories.webp" },
+                    { "label": "Company Profiles", "icon": "fas fa-building", "file": "homeease_screen/companies.webp" },
+                    { "label": "Address Management", "icon": "fas fa-map-marker-alt", "file": "homeease_screen/address.webp" },
+                    { "label": "Order Details", "icon": "fas fa-receipt", "file": "homeease_screen/orderdetalis.webp" },
+                    { "label": "My Wallet", "icon": "fas fa-wallet", "file": "homeease_screen/mywallet.webp" },
+                    { "label": "Order History", "icon": "fas fa-history", "file": "homeease_screen/history.webp" },
+                    { "label": "User Profile", "icon": "fas fa-user", "file": "homeease_screen/profile.webp" },
+                    { "label": "booking service1", "icon": "fas fa-info-circle", "file": "homeease_screen/process1.webp" },
+                    { "label": "booking service2", "icon": "fas fa-info-circle", "file": "homeease_screen/process2.webp" },
+                    { "label": "booking service3", "icon": "fas fa-info-circle", "file": "homeease_screen/process3.webp" }
+
+
+
+
                 ]
             }
         },
@@ -819,7 +825,7 @@ window.portfolioData = {
             "fileName": "ecommerce_case_study.md",
 
             "hero": {
-                "title": "StoreApp — Advanced Multi-Role E-Commerce Platform",
+                "title": "StoreApp â€” Advanced Multi-Role E-Commerce Platform",
                 "lead": "A full-scale, production-ready Flutter e-commerce application leveraging the GetX ecosystem for high-performance state management, featuring dynamic product discovery, interactive cart & checkout flows, real-time location mapping, role-based admin controls, and robust RESTful API integration."
             },
 
@@ -827,7 +833,7 @@ window.portfolioData = {
                 {
                     "icon": "fas fa-bullseye",
                     "title": "Executive Summary",
-                    "content": "Modern digital retail demands fast load times, intuitive navigation, and reliable checkout processes. StoreApp addresses these needs by providing a comprehensive mobile storefront that connects consumers with diverse product categories, simplifies the cart-to-checkout pipeline, and empowers administrators with a built-in management suite—all packaged in a fluid, cross-platform application.",
+                    "content": "Modern digital retail demands fast load times, intuitive navigation, and reliable checkout processes. StoreApp addresses these needs by providing a comprehensive mobile storefront that connects consumers with diverse product categories, simplifies the cart-to-checkout pipeline, and empowers administrators with a built-in management suiteâ€”all packaged in a fluid, cross-platform application.",
                     "bullets": [
                         "<strong>Target Audience:</strong> Shoppers seeking a smooth mobile purchasing experience, and store administrators requiring on-the-go inventory and order management.",
                         "<strong>Core Solution:</strong> An elegant platform unifying dynamic product search, real-time cart updates, secure checkout with location-based address picking, and favorite wishlists.",
@@ -899,9 +905,9 @@ window.portfolioData = {
                     "title": "Engineering Challenges Solved",
                     "content": "Building a full-scale e-commerce platform required overcoming specific logic, state management, and routing hurdles.",
                     "bullets": [
-                        "<strong>Challenge 1 — Optimistic UI Updates:</strong> Waiting for HTTP requests to finish before updating the Cart or Favorites causes perceived lag. <em>Solved by</em> updating GetX observable states instantly upon user tap, and reverting the state silently if the API request fails via the controller.",
-                        "<strong>Challenge 2 — Complex Route Middleware:</strong> Ensuring unauthenticated users cannot access checkout, and regular users cannot access the Admin panel. <em>Solved by</em> implementing custom GetX Route Middlewares that inspect the local `SharedPreferences` cache before rendering the requested route.",
-                        "<strong>Challenge 3 — Map-Based Address Picking:</strong> Parsing accurate string addresses from a visual map pin. <em>Solved by</em> combining `google_maps_flutter` for the visual interface and `geocoding` to reverse-geocode the Lat/Lng into a readable street address, saving both to the database."
+                        "<strong>Challenge 1 â€” Optimistic UI Updates:</strong> Waiting for HTTP requests to finish before updating the Cart or Favorites causes perceived lag. <em>Solved by</em> updating GetX observable states instantly upon user tap, and reverting the state silently if the API request fails via the controller.",
+                        "<strong>Challenge 2 â€” Complex Route Middleware:</strong> Ensuring unauthenticated users cannot access checkout, and regular users cannot access the Admin panel. <em>Solved by</em> implementing custom GetX Route Middlewares that inspect the local `SharedPreferences` cache before rendering the requested route.",
+                        "<strong>Challenge 3 â€” Map-Based Address Picking:</strong> Parsing accurate string addresses from a visual map pin. <em>Solved by</em> combining `google_maps_flutter` for the visual interface and `geocoding` to reverse-geocode the Lat/Lng into a readable street address, saving both to the database."
                     ]
                 }
             ],
@@ -924,17 +930,16 @@ window.portfolioData = {
             "mockup": {
                 "projectKey": "ecommerce",
                 "screens": [
-                    { "label": "Onboarding", "icon": "fas fa-star", "file": "ecommerce_screen/onboarding.png" },
-                    { "label": "Secure Login", "icon": "fas fa-sign-in-alt", "file": "ecommerce_screen/login.png" },
-                    { "label": "OTP Verification", "icon": "fas fa-key", "file": "ecommerce_screen/otp.png" },
-                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "ecommerce_screen/home.png" },
-                    { "label": "Product Catalog", "icon": "fas fa-list", "file": "ecommerce_screen/category.png" },
-                    { "label": "Product Details", "icon": "fas fa-info-circle", "file": "ecommerce_screen/product_detail.png" },
-                    { "label": "Shopping Cart", "icon": "fas fa-shopping-cart", "file": "ecommerce_screen/cart.png" },
-                    { "label": "Location Checkout", "icon": "fas fa-map-marked-alt", "file": "ecommerce_screen/checkout_map.png" },
-                    { "label": "Order Details", "icon": "fas fa-box", "file": "ecommerce_screen/order_detail.png" },
-                    { "label": "Admin Dashboard", "icon": "fas fa-user-shield", "file": "ecommerce_screen/admin_home.png" },
-                    { "label": "User Profile", "icon": "fas fa-user", "file": "ecommerce_screen/profile.png" }
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "ecommerce_screen/onboarding.webp" },
+                    { "label": "Secure Login", "icon": "fas fa-sign-in-alt", "file": "ecommerce_screen/login.webp" },
+                    { "label": "OTP Verification", "icon": "fas fa-key", "file": "ecommerce_screen/otp.webp" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "ecommerce_screen/home.webp" },
+                    { "label": "Product Catalog", "icon": "fas fa-list", "file": "ecommerce_screen/category.webp" },
+                    { "label": "Product Details", "icon": "fas fa-info-circle", "file": "ecommerce_screen/product_detail.webp" },
+                    { "label": "Shopping Cart", "icon": "fas fa-shopping-cart", "file": "ecommerce_screen/cart.webp" },
+                    { "label": "Location Checkout", "icon": "fas fa-map-marked-alt", "file": "ecommerce_screen/checkout_map.webp" },
+                    { "label": "Payment Checkout", "icon": "fas fa-credit-card", "file": "ecommerce_screen/checkout_payment.webp" },
+                    { "label": "User Profile", "icon": "fas fa-user", "file": "ecommerce_screen/profile.webp" }
                 ]
             }
         },
@@ -945,15 +950,15 @@ window.portfolioData = {
             "fileName": "fluoro_master_case_study.md",
 
             "hero": {
-                "title": "Fluoro Master — Medical Radiology & Fluoroscopy Ecosystem",
-                "lead": "A comprehensive medical utility and educational platform for radiology professionals and students, delivering detailed fluoroscopy procedure guides, dose calculators, interactive safety checklists, clinical quizzes, and an AI-powered advisory system — built with Clean Architecture and BLoC state management."
+                "title": "Fluoro Master â€” Medical Radiology & Fluoroscopy Ecosystem",
+                "lead": "A comprehensive medical utility and educational platform for radiology professionals and students, delivering detailed fluoroscopy procedure guides, dose calculators, interactive safety checklists, clinical quizzes, and an AI-powered advisory system â€” built with Clean Architecture and BLoC state management."
             },
 
             "sections": [
                 {
                     "icon": "fas fa-bullseye",
                     "title": "Executive Summary",
-                    "content": "Radiology professionals and students face a critical lack of accessible, structured clinical references during procedures. Fluoro Master bridges this gap by providing an all-in-one digital companion that covers procedural protocols, radiation safety, dose monitoring, and continuous clinical education — available on-device without requiring constant connectivity.",
+                    "content": "Radiology professionals and students face a critical lack of accessible, structured clinical references during procedures. Fluoro Master bridges this gap by providing an all-in-one digital companion that covers procedural protocols, radiation safety, dose monitoring, and continuous clinical education â€” available on-device without requiring constant connectivity.",
                     "bullets": [
                         "<strong>Target Audience:</strong> Radiologists, fluoroscopy technologists, radiology residents, and medical students seeking on-the-job clinical guidance and structured learning.",
                         "<strong>Core Solution:</strong> A unified platform combining a detailed procedures library, real-time dose calculators, interactive safety simulators, AI-assisted advisory, and a gamified quiz engine.",
@@ -966,11 +971,11 @@ window.portfolioData = {
                     "title": "Architecture & Engineering Decisions",
                     "content": "Fluoro Master employs a <strong>Feature-First Clean Architecture</strong>, clearly separating the Presentation, Domain, and Data layers for every feature module. This ensures high testability and a maintainable, extensible codebase as the medical content library grows.",
                     "bullets": [
-                        "<strong>BLoC Pattern:</strong> Manages all complex state transitions — from procedure loading to quiz scoring and AI response streaming — providing explicit, testable, and side-effect-free UI updates.",
+                        "<strong>BLoC Pattern:</strong> Manages all complex state transitions â€” from procedure loading to quiz scoring and AI response streaming â€” providing explicit, testable, and side-effect-free UI updates.",
                         "<strong>GetIt (Service Locator):</strong> Centralizes all dependency injection across data sources, repositories, and business logic classes, enabling seamless decoupling and painless unit testing.",
                         "<strong>Retrofit & Dio:</strong> Powers the API communication layer with auto-generated type-safe clients, token-injection interceptors, and structured logging for synchronizing medical data and user progress.",
                         "<strong>Flutter Animate:</strong> Provides smooth, performant micro-animations across all screens, ensuring a premium and engaging user experience without impacting rendering performance.",
-                        "<strong>Local Storage:</strong> Critical clinical content and user progress are encrypted and cached locally, guaranteeing full offline access — essential in clinical environments with unreliable connectivity."
+                        "<strong>Local Storage:</strong> Critical clinical content and user progress are encrypted and cached locally, guaranteeing full offline access â€” essential in clinical environments with unreliable connectivity."
                     ]
                 },
 
@@ -1005,7 +1010,7 @@ window.portfolioData = {
                     "title": "Interactive Quiz & Education Engine",
                     "content": "To support continuous medical education, Fluoro Master features a structured quiz system covering key fluoroscopy knowledge domains.",
                     "bullets": [
-                        "<strong>Topic-Based Quizzes:</strong> Quizzes are organized by clinical topics — radiation physics, equipment parameters, contrast protocols, and patient safety — allowing targeted knowledge assessment.",
+                        "<strong>Topic-Based Quizzes:</strong> Quizzes are organized by clinical topics â€” radiation physics, equipment parameters, contrast protocols, and patient safety â€” allowing targeted knowledge assessment.",
                         "<strong>Scored Sessions:</strong> Each quiz session tracks scores, correct/incorrect answers, and time taken, providing users with an accurate picture of their knowledge gaps.",
                         "<strong>Progress Persistence:</strong> Quiz history and scores are persisted locally using encrypted storage, enabling users to track their learning progress over time without requiring an account."
                     ]
@@ -1027,9 +1032,9 @@ window.portfolioData = {
                     "title": "Engineering Challenges Solved",
                     "content": "Building a medically accurate, offline-capable, and AI-integrated platform presented unique engineering challenges.",
                     "bullets": [
-                        "<strong>Challenge 1 — Offline-First Clinical Data:</strong> Medical professionals often work in signal-poor clinical environments. <em>Solved by</em> implementing an offline-first data layer that caches all procedure content and user progress locally using encrypted storage, syncing transparently with the remote API when connectivity is restored.",
-                        "<strong>Challenge 2 — Complex Nested State Management:</strong> Procedure detail screens contain multiple independent sub-states (checklist completion, dose calculations, AI responses). <em>Solved by</em> scoping dedicated Cubits to each functional sub-section, keeping state isolated and preventing unintentional UI rebuilds across the entire screen.",
-                        "<strong>Challenge 3 — Secure Medical Data API:</strong> Medical data APIs require strict authentication and tamper-proof communication. <em>Solved by</em> implementing Dio interceptors for automatic token injection and response integrity verification, combined with Flutter Secure Storage for encrypted credential persistence."
+                        "<strong>Challenge 1 â€” Offline-First Clinical Data:</strong> Medical professionals often work in signal-poor clinical environments. <em>Solved by</em> implementing an offline-first data layer that caches all procedure content and user progress locally using encrypted storage, syncing transparently with the remote API when connectivity is restored.",
+                        "<strong>Challenge 2 â€” Complex Nested State Management:</strong> Procedure detail screens contain multiple independent sub-states (checklist completion, dose calculations, AI responses). <em>Solved by</em> scoping dedicated Cubits to each functional sub-section, keeping state isolated and preventing unintentional UI rebuilds across the entire screen.",
+                        "<strong>Challenge 3 â€” Secure Medical Data API:</strong> Medical data APIs require strict authentication and tamper-proof communication. <em>Solved by</em> implementing Dio interceptors for automatic token injection and response integrity verification, combined with Flutter Secure Storage for encrypted credential persistence."
                     ]
                 }
             ],
@@ -1050,18 +1055,20 @@ window.portfolioData = {
             "mockup": {
                 "projectKey": "fluoro",
                 "screens": [
-                    { "label": "Onboarding", "icon": "fas fa-star", "file": "fluoro_screen/onboarding.png" },
-                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "fluoro_screen/home.png" },
-                    { "label": "Procedures Library", "icon": "fas fa-book-medical", "file": "fluoro_screen/procedures.png" },
-                    { "label": "Procedure Detail", "icon": "fas fa-file-medical", "file": "fluoro_screen/procedure_detail.png" },
-                    { "label": "Safety Checklist", "icon": "fas fa-clipboard-check", "file": "fluoro_screen/checklist.png" },
-                    { "label": "Dose Calculator", "icon": "fas fa-calculator", "file": "fluoro_screen/calculator.png" },
-                    { "label": "Quiz Screen", "icon": "fas fa-graduation-cap", "file": "fluoro_screen/quiz.png" },
-                    { "label": "AI Advisory", "icon": "fas fa-brain", "file": "fluoro_screen/ai_advisory.png" },
-                    { "label": "References", "icon": "fas fa-list-alt", "file": "fluoro_screen/references.png" }
+                    { "label": "Onboarding", "icon": "fas fa-star", "file": "fluoro_screen/onboarding.webp" },
+                    { "label": "Home Dashboard", "icon": "fas fa-home", "file": "fluoro_screen/home.webp" },
+                    { "label": "Procedures Library", "icon": "fas fa-book-medical", "file": "fluoro_screen/procedures.webp" },
+                    { "label": "Procedure Detail", "icon": "fas fa-file-medical", "file": "fluoro_screen/procedure_detail.webp" },
+                    { "label": "Safety Checklist", "icon": "fas fa-clipboard-check", "file": "fluoro_screen/checklist.webp" },
+                    { "label": "Certificate", "icon": "fas fa-certificate ", "file": "fluoro_screen/certificate.webp" },
+                    { "label": "Quiz Screen", "icon": "fas fa-graduation-cap", "file": "fluoro_screen/quiz.webp" },
+                    { "label": "Quiz Settings Screen", "icon": "fas fa-graduation-cap", "file": "fluoro_screen/quiz_settings.webp" },
+                    { "label": "AI Advisory", "icon": "fas fa-brain", "file": "fluoro_screen/ai_advisory.webp" },
+                    { "label": "References", "icon": "fas fa-list-alt", "file": "fluoro_screen/references.webp" }
                 ]
             }
         }
 
     ]
 };
+
