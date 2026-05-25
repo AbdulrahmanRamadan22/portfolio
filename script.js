@@ -1,4 +1,4 @@
-﻿// Loading Animation
+// Loading Animation
 class LoadingManager {
     constructor() {
         this.commands = [
@@ -44,12 +44,12 @@ class LoadingManager {
 
     showOutput(element) {
         const outputs = [
-            'Fetching mobile development expertise... âœ“',
-            'Loading Flutter and Dart skills... âœ“',
-            'Compiling Wratil and Jobizz projects... âœ“',
-            'Initializing Clean Architecture portfolio... âœ“',
-            'Setting up interactive interface... âœ“',
-            'Portfolio ready! Welcome Abdelrahman Ramadan ًںڑ€'
+            'Fetching mobile development expertise... ✓',
+            'Loading Flutter and Dart skills... ✓',
+            'Compiling Wratil and Jobizz projects... ✓',
+            'Initializing Clean Architecture portfolio... ✓',
+            'Setting up interactive interface... ✓',
+            'Portfolio ready! Welcome Abdelrahman Ramadan 🚀'
         ];
 
         let outputIndex = 0;
